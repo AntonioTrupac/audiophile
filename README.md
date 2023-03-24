@@ -29,3 +29,9 @@ Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/ver
 
 ## Sync Prisma with DB
 ``npx prisma db push``
+
+## Genereta Prisma Client locally 
+``npx prisma generate`` or ``npm install``
+
+## Run Prisma studio
+``npx prisma studio``

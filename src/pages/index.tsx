@@ -5,9 +5,10 @@ import { api } from "~/utils/api";
 import { SignInButton, SignOutButton, useUser } from "@clerk/nextjs";
 
 const Home: NextPage = () => {
-  const hello = api.example.hello.useQuery({ text: "from tRPC" });
+  const { data } = api.product.getAll.useQuery();
   const user = useUser();
 
+  console.log(data);
   return (
     <>
       <Head>
@@ -22,6 +23,18 @@ const Home: NextPage = () => {
           ) : (
             <SignOutButton />
           )}
+        </div>
+
+        <div>
+          <h1 className="text-4xl font-bold">Products</h1>
+          <div>
+            {data?.map((product) => (
+              <div key={product.id}>
+                <h2>{product.name}</h2>
+                <p>{product.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </main>
     </>

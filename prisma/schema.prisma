@@ -22,6 +22,6 @@ model Product {
     price       Int
     description String   @db.VarChar(255)
 
-    userId      String
+    userId String
     @@index([userId])
 }
