@@ -3,7 +3,7 @@ import Head from "next/head";
 
 import { api } from "~/utils/api";
 import { SignInButton, SignOutButton, useUser } from "@clerk/nextjs";
-import { Button, LinkButton } from "~/components";
+import { Button, Input, Label, LinkButton } from "~/components";
 
 const Home: NextPage = () => {
   const { data, isLoading } = api.product.getAll.useQuery();
@@ -59,6 +59,17 @@ const Home: NextPage = () => {
             <LinkButton href={"/"} variant="tertiary" hasIcon>
               see product
             </LinkButton>
+          </div>
+        </div>
+
+        <div>
+          <h1>Form components</h1>
+
+          <div>
+            <Label htmlFor="name" className="mb-2">
+              <span>Name</span>
+            </Label>
+            <Input placeholder="Name" />
           </div>
         </div>
 

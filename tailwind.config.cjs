@@ -9,6 +9,7 @@ const config = {
         secondary: "#101010",
         grayish: "#F1F1F1",
         'light-grayish': "#FAFAFA",
+        'input-grayish': "#CFCFCF",
       }
     },
   },
