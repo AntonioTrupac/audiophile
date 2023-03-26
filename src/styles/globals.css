@@ -2,8 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: #fafafa;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
@@ -74,4 +81,13 @@ p {
     letter-spacing: 1.71429px;
     text-transform: uppercase;
     color: #D87D4A;
+}
+
+a {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    line-height: 1.5625rem;
+    letter-spacing: 0.125rem;
+    color: #FFF;
+    text-transform: uppercase;
 }

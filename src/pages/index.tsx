@@ -3,7 +3,7 @@ import Head from "next/head";
 
 import { api } from "~/utils/api";
 import { SignInButton, SignOutButton, useUser } from "@clerk/nextjs";
-import { Button, Input, Label, LinkButton } from "~/components";
+import { HeroSection } from "~/components";
 
 const Home: NextPage = () => {
   const { data, isLoading } = api.product.getAll.useQuery();
@@ -17,7 +17,6 @@ const Home: NextPage = () => {
     return <div>Something went wrong</div>;
   }
 
-  console.log(data);
   return (
     <>
       <Head>
@@ -26,51 +25,15 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section className="flex min-h-screen flex-col items-center justify-center">
+      <section className="mx-auto flex min-h-screen w-full flex-col items-center">
+        <HeroSection />
+
         <div>
           {!user.isSignedIn ? (
             <SignInButton>Sign in with Clerk</SignInButton>
           ) : (
             <SignOutButton />
           )}
-        </div>
-
-        <div>
-          <h1>Components</h1>
-          <div>
-            <Button>see product</Button>
-
-            <Button variant="secondary">
-              <span>see product</span>
-            </Button>
-
-            <Button variant="tertiary" hasIcon>
-              shop
-            </Button>
-          </div>
-
-          <div>
-            <LinkButton href={"/"}>see product</LinkButton>
-
-            <LinkButton href={"/"} variant="secondary">
-              see product
-            </LinkButton>
-
-            <LinkButton href={"/"} variant="tertiary" hasIcon>
-              see product
-            </LinkButton>
-          </div>
-        </div>
-
-        <div>
-          <h1>Form components</h1>
-
-          <div>
-            <Label htmlFor="name" className="mb-2">
-              <span>Name</span>
-            </Label>
-            <Input placeholder="Name" />
-          </div>
         </div>
 
         <div>
