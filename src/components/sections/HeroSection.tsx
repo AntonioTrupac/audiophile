@@ -1,9 +1,9 @@
 const HeroSectionContent = () => {
   return (
-    <div className="absolute left-0 top-[40%] flex flex-col items-center justify-center">
-      <h1 className="text-4xl font-bold">New product</h1>
-      <h2 className="text-2xl font-bold">XX99 Mark II Headphones</h2>
-      <p className="text-lg">
+    <div className="xsm:w- absolute left-0 right-0 top-[33%] flex flex-col items-center justify-center px-6 text-center">
+      <h2 className="overline-custom mb-4 text-white/50">New product</h2>
+      <h2 className="mb-6 text-white">XX99 Mark II Headphones</h2>
+      <p className="text-white/75">
         Experience natural, lifelike audio and exceptional build quality made
         for the passionate music enthusiast.
       </p>
