@@ -27,6 +27,9 @@ const config = {
       maxWidth: {
         "xsm": "450px",
         "2xl": "1440px"
+      },
+      gridTemplateColumns: {
+        "hero-2": "minmax(0, 396px), minmax(0, 714px)"
       }
     }
   },

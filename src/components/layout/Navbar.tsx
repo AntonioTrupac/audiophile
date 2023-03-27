@@ -5,7 +5,7 @@ import Link from "next/link";
 const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 z-[9999] flex w-full justify-center">
-      <div className="flex w-full items-center justify-between xl:max-w-[1110px]">
+      <div className="flex w-full items-center justify-between lg:mx-12 lg:max-w-[1110px] xl:mx-0">
         <div>
           <Image
             src="/assets/shared/desktop/logo.svg"
