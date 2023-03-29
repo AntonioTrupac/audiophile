@@ -1,11 +1,26 @@
 import Cart from "~/components/icons/Cart";
 import Image from "next/image";
 import Link from "next/link";
+import MobileNavigation from "~/components/layout/MobileNavigation";
+import { useState } from "react";
+import Menu from "~/components/icons/Menu";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const onClose = () => setIsOpen(false);
+
   return (
     <header className="absolute top-6 left-0 z-[9999] flex w-full flex-col items-center justify-center">
-      <div className="flex w-full items-center justify-between lg:mx-12 lg:max-w-[1110px] xl:mx-0">
+      <div className="flex w-full items-center justify-between px-6 lg:mx-12 lg:max-w-[1110px] lg:px-0 xl:mx-0">
+        <button
+          className="flex lg:hidden"
+          type="button"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <Menu />
+        </button>
+
         <Image
           src="/assets/shared/desktop/logo.svg"
           alt="logo"
@@ -14,7 +29,7 @@ const Navbar = () => {
         />
 
         <nav>
-          <ul className="flex gap-[2.125rem]">
+          <ul className="hidden gap-[2.125rem] lg:flex">
             <li>
               <Link href="/" className="hover:text-primary">
                 Home
@@ -36,6 +51,8 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
+
+          {isOpen && <MobileNavigation isOpen={isOpen} onClose={onClose} />}
         </nav>
 
         <button onClick={() => console.log("Clicked")}>

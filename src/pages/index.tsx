@@ -1,21 +1,19 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-
-import { api } from "~/utils/api";
 import { SignInButton, SignOutButton, useUser } from "@clerk/nextjs";
-import { HeroSection } from "~/components";
+import { CategoryList, HeroSection } from "~/components";
 
 const Home: NextPage = () => {
-  const { data, isLoading } = api.product.getAll.useQuery();
+  // const { data, isLoading } = api.product.getAll.useQuery();
   const user = useUser();
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (!data) {
-    return <div>Something went wrong</div>;
-  }
+  //
+  // if (isLoading) {
+  //   return <div>Loading...</div>;
+  // }
+  //
+  // if (!data) {
+  //   return <div>Something went wrong</div>;
+  // }
 
   return (
     <>
@@ -28,24 +26,13 @@ const Home: NextPage = () => {
       <section className="mx-auto flex min-h-screen w-full flex-col items-center">
         <HeroSection />
 
+        <CategoryList />
         <div>
           {!user.isSignedIn ? (
             <SignInButton>Sign in with Clerk</SignInButton>
           ) : (
             <SignOutButton />
           )}
-        </div>
-
-        <div>
-          <h1 className="text-4xl font-bold">Products</h1>
-          <div>
-            {data?.map((product) => (
-              <div key={product.id}>
-                <h1>{product.name}</h1>
-                <p>{product.description}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
     </>
