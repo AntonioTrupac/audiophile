@@ -27,6 +27,7 @@ const Home: NextPage = () => {
         <HeroSection />
 
         <CategoryList />
+
         <div>
           {!user.isSignedIn ? (
             <SignInButton>Sign in with Clerk</SignInButton>

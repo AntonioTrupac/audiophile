@@ -3,4 +3,4 @@ export * from "./icons";
 export * from "./form";
 export * from "./layout";
 export * from "./sections";
-export { default as CategoryList } from "./CategoryList";
+export { default as CategoryList } from "./categoryList";
