@@ -1,7 +1,14 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import { SignInButton, SignOutButton, useUser } from "@clerk/nextjs";
-import { CategoryList, HeroSection } from "~/components";
+import {
+  CategoryList,
+  HeroSection,
+  ProductContentWithDescription,
+  ProductContentWithName,
+  ProductSplitContent,
+} from "~/components";
+import { productMockData } from "~/mockData/product";
 
 const Home: NextPage = () => {
   // const { data, isLoading } = api.product.getAll.useQuery();
@@ -27,6 +34,25 @@ const Home: NextPage = () => {
         <HeroSection />
 
         <CategoryList />
+
+        <div className="flex w-full flex-col items-center gap-10">
+          {productMockData[0] && (
+            <ProductContentWithDescription
+              key={productMockData[0].id}
+              product={productMockData[0]}
+              backgroundColor="bg-primary"
+              contentRight
+            />
+          )}
+
+          {productMockData[1] && (
+            <ProductContentWithName product={productMockData[1]} />
+          )}
+
+          {productMockData[2] && (
+            <ProductSplitContent product={productMockData[2]} />
+          )}
+        </div>
 
         <div>
           {!user.isSignedIn ? (
