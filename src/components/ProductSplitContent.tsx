@@ -37,16 +37,18 @@ const ProductSplitContent = ({
         />
       </div>
 
-      <div className="flex h-[320px] w-full flex-col items-center justify-center bg-grayish text-left">
-        <h4 className="font-bold">{name}</h4>
+      <div className="relative flex h-[320px] w-full flex-col items-center justify-center bg-grayish">
+        <div className="absolute top-[100px] left-[95px]">
+          <h4 className="font-bold">{name}</h4>
 
-        <LinkButton
-          href={`/products/${id}`}
-          className="mt-8 inline-flex"
-          variant="secondary"
-        >
-          See product
-        </LinkButton>
+          <LinkButton
+            href={`/products/${id}`}
+            className="mt-8 inline-flex"
+            variant="secondary"
+          >
+            See product
+          </LinkButton>
+        </div>
       </div>
     </div>
   );
