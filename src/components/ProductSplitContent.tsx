@@ -27,19 +27,33 @@ const ProductSplitContent = ({
   product: { id, name, image },
 }: ProductSplitContentProps) => {
   return (
-    <div className="flex w-full max-w-[1110px] items-center justify-center gap-[1.875rem]">
-      <div className="relative aspect-[1.6875] h-[320px]">
+    <div className="flex w-full max-w-[1110px] flex-col items-center justify-center gap-[1.875rem] md:flex-row">
+      <div className="relative aspect-[1.059375] h-[200px] w-full md:h-[320px] lg:aspect-[1.68780488]">
         <Image
           src={image.desktop.url}
           alt={image.alt}
           fill
-          className="rounded-md"
+          className="hidden rounded-md lg:block"
+        />
+
+        <Image
+          src={image.tablet.url}
+          alt={image.alt}
+          fill
+          className="hidden rounded-md md:block lg:hidden"
+        />
+
+        <Image
+          src={image.mobile.url}
+          alt={image.alt}
+          fill
+          className="block rounded-md md:hidden"
         />
       </div>
 
-      <div className="relative flex h-[320px] w-full flex-col items-center justify-center bg-grayish">
-        <div className="absolute top-[100px] left-[95px]">
-          <h4 className="font-bold">{name}</h4>
+      <div className="relative flex h-[320px] w-full flex-col items-center justify-center rounded-md bg-grayish">
+        <div className="absolute left-[40px] top-[100px] lg:left-[95px]">
+          <h4>{name}</h4>
 
           <LinkButton
             href={`/products/${id}`}

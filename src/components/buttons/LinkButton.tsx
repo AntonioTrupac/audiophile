@@ -13,6 +13,7 @@ interface LinkButtonProps extends LinkProps {
   hasIcon?: boolean;
   isExternal?: boolean;
   externalHref?: string;
+  style?: React.CSSProperties;
 }
 
 const LinkButton = forwardRef<HTMLAnchorElement, LinkButtonProps>(
@@ -23,6 +24,7 @@ const LinkButton = forwardRef<HTMLAnchorElement, LinkButtonProps>(
       variant = "primary",
       hasIcon = false,
       isExternal = false,
+      style: style = {},
       ...props
     },
     ref
@@ -44,14 +46,20 @@ const LinkButton = forwardRef<HTMLAnchorElement, LinkButtonProps>(
 
     if (isExternal) {
       return (
-        <Link ref={ref} target="_blank" rel="noopener noreferrer" {...props}>
+        <Link
+          ref={ref}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={style}
+          {...props}
+        >
           {content}
         </Link>
       );
     }
 
     return (
-      <Link ref={ref} className={combinedClassName} {...props}>
+      <Link ref={ref} className={combinedClassName} style={style} {...props}>
         {content}
       </Link>
     );

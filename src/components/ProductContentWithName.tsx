@@ -29,16 +29,32 @@ const ProductContentWithName = ({
 }: ProductContentWithNameProps) => {
   return (
     <div className="flex w-full max-w-[1110px] flex-col items-center justify-center">
-      <div className={`relative h-[320px] w-full self-end`}>
+      <div
+        className={`relative h-[320px] w-full self-end md:aspect-[2.1531] lg:aspect-[1.021875]`}
+      >
         <Image
           src={image.desktop.url}
           alt={image.alt}
           fill
-          className="rounded-md"
+          className="hidden rounded-md lg:block"
         />
 
-        <div className="absolute top-[100px] left-20 z-10">
-          <h4 className="font-bold">{name}</h4>
+        <Image
+          src={image.tablet.url}
+          alt={image.alt}
+          fill
+          className="hidden rounded-md md:block lg:hidden"
+        />
+
+        <Image
+          src={image.mobile.url}
+          alt={image.alt}
+          fill
+          className="block rounded-md md:hidden"
+        />
+
+        <div className="absolute top-[100px] left-5 z-10 md:left-20">
+          <h4>{name}</h4>
 
           <LinkButton
             href={`/products/${id}`}

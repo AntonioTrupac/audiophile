@@ -35,7 +35,7 @@ const Home: NextPage = () => {
 
         <CategoryList />
 
-        <div className="flex w-full flex-col items-center gap-10">
+        <div className="flex w-full flex-col items-center gap-10 px-6 md:px-10 xl:px-0">
           {productMockData[0] && (
             <ProductContentWithDescription
               key={productMockData[0].id}

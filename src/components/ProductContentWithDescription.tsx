@@ -19,7 +19,7 @@ type Product = {
   };
 };
 
-interface ProductContentWithImageProps {
+interface ProductContentWithDescriptionProps {
   product: Product;
   backgroundColor?: string;
   contentRight?: boolean;
@@ -29,20 +29,27 @@ const ProductContentWithDescription = ({
   product,
   backgroundColor = "",
   contentRight = false,
-}: ProductContentWithImageProps) => {
+}: ProductContentWithDescriptionProps) => {
   return (
     <div
-      className={`flex w-full max-w-[1110px] items-start justify-center gap-[120px] ${backgroundColor} overflow-hidden rounded-md pt-24`}
+      className={`flex w-full max-w-[1110px] items-center justify-center gap-8 pt-20 pb-16 md:gap-16 md:pt-[3.25rem] lg:items-start lg:gap-[120px] lg:pb-0 ${backgroundColor} flex-col overflow-hidden rounded-md lg:flex-row lg:pt-24`}
     >
-      <div className={`${contentRight ? "order-2" : "order-1"} mt-4 w-[350px]`}>
-        <h1 className="text-white">{product.name}</h1>
+      <div
+        className={`${
+          contentRight ? "order-2" : "order-1"
+        } px-6 text-center md:w-[350px] md:px-0 lg:mt-4`}
+      >
+        <h2 className="text-4xl tracking-[1.29px] text-white md:text-[56px]">
+          {product.name}
+        </h2>
 
-        <p className="mt-6 text-white">{product.description}</p>
+        <p className="mt-6 text-white/75">{product.description}</p>
 
         <LinkButton
           variant="secondary"
           href={`/products/${product.id}`}
-          className="mt-10 inline-flex bg-black text-white hover:border-[#4C4C4C] hover:bg-[#4C4C4C] active:border-[#4C4C4C] active:bg-[#4C4C4C]"
+          className="mt-6 inline-flex text-white md:mt-10"
+          style={{ backgroundColor: "#000", borderColor: "#000" }}
         >
           See product
         </LinkButton>
@@ -51,9 +58,28 @@ const ProductContentWithDescription = ({
       <div
         className={`${
           contentRight ? "order-1" : "order-2"
-        } relative mb-[-0.75rem] aspect-[0.831643002] h-[473px] self-end`}
+        } relative aspect-[0.831643002] h-[207px] md:h-[237px] lg:mb-[-0.75rem] lg:h-[473px] lg:self-end`}
       >
-        <Image src={product.image.desktop.url} alt={product.image.alt} fill />
+        <Image
+          src={product.image.desktop.url}
+          alt={product.image.alt}
+          fill
+          className="hidden lg:block"
+        />
+
+        <Image
+          src={product.image.tablet.url}
+          alt={product.image.alt}
+          fill
+          className="hidden md:block lg:hidden"
+        />
+
+        <Image
+          src={product.image.mobile.url}
+          alt={product.image.alt}
+          fill
+          className="block md:hidden"
+        />
       </div>
     </div>
   );
