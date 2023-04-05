@@ -1,10 +1,5 @@
 import CategoryListItem from "~/components/categoryList/CategoryListItem";
 
-const image = {
-  src: "/assets/shared/desktop/image-category-thumbnail-speakers.png",
-  alt: "Speakers",
-};
-
 const listData = [
   {
     image: {
