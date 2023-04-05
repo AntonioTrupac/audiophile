@@ -15,7 +15,7 @@ const bestGearData = {
 
 const BestGearSection = () => {
   return (
-    <div className="mt-[7.5rem] flex w-full max-w-[1110px] flex-col items-center justify-center gap-10 lg:flex-row lg:gap-[125px]">
+    <div className="mt-[7.5rem] flex w-full max-w-[1110px] flex-col items-center justify-center gap-10 lg:flex-row lg:gap-[7.8125px]">
       <div className="relative aspect-[1.09] w-full md:aspect-[2.29666667] lg:order-2 lg:aspect-[0.92517] lg:max-h-[588px]">
         <Image
           src={bestGearData.mobile.src}
@@ -39,8 +39,8 @@ const BestGearSection = () => {
         />
       </div>
 
-      <div className="text-center md:px-[56px] lg:order-1 lg:max-w-[445px] lg:px-0 lg:text-left">
-        <h4 className="lg:text-[40px] lg:leading-[44px] lg:tracking-[1.42857px]">
+      <div className="text-center md:px-16 lg:order-1 lg:max-w-[445px] lg:px-0 lg:text-left">
+        <h4 className="lg:text-[2.5rem] lg:leading-[2.75rem] lg:tracking-[1.42857px]">
           Bringing you the <span className="text-primary">best</span> audio gear
         </h4>
 
