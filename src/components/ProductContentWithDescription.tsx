@@ -39,7 +39,7 @@ const ProductContentWithDescription = ({
           contentRight ? "order-2" : "order-1"
         } px-6 text-center md:w-[350px] md:px-0 lg:mt-4`}
       >
-        <h2 className="text-4xl tracking-[1.29px] text-white md:text-[56px]">
+        <h2 className="text-4xl tracking-[1.29px] text-white md:text-[56px] md:leading-[58px]">
           {product.name}
         </h2>
 

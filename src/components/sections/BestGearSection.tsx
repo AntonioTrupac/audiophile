@@ -15,7 +15,7 @@ const bestGearData = {
 
 const BestGearSection = () => {
   return (
-    <div className="mt-[7.5rem] flex w-full max-w-[1110px] flex-col items-center justify-center gap-10 lg:flex-row lg:gap-[7.8125px]">
+    <div className="mt-[7.5rem] flex w-full max-w-[1110px] flex-col items-center justify-center gap-10 lg:flex-row lg:gap-[7.8125rem]">
       <div className="relative aspect-[1.09] w-full md:aspect-[2.29666667] lg:order-2 lg:aspect-[0.92517] lg:max-h-[588px]">
         <Image
           src={bestGearData.mobile.src}

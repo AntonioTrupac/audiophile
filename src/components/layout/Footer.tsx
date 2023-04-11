@@ -1,19 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import MobileNavigation from "./MobileNavigation";
-import { Facebook, Instagram, Twitter } from "~/components";
+import { SocialLinkButtons } from "~/components";
 
 const Footer = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const onClose = () => {
-    setIsOpen(false);
-  };
-
   return (
-    <footer className="text-neutral-light bg-black py-8 px-4 sm:px-8 lg:px-16">
-      <div className="mb-8 flex items-center justify-between">
+    <footer className="bg-black px-4 pt-12 pb-8 md:px-10 md:pt-[4.6875rem] md:pb-12 lg:px-16">
+      <div className="mb-8 flex max-w-[1110px] flex-col items-center justify-between md:items-start lg:mx-auto lg:flex-row lg:items-center">
         <Image
           src="/assets/shared/desktop/logo.svg"
           alt="logo"
@@ -21,8 +13,8 @@ const Footer = () => {
           height={25}
         />
 
-        <nav className="ml-8">
-          <ul className="hidden gap-[2.125rem] lg:flex">
+        <nav className="mt-8 lg:ml-8 lg:mt-0">
+          <ul className="flex flex-col gap-[2.125rem] md:flex-row">
             <li>
               <Link href="/" className="hover:text-primary">
                 Home
@@ -46,32 +38,31 @@ const Footer = () => {
           </ul>
         </nav>
       </div>
-      <div className="mx-auto max-w-2xl text-center">
-        <div className="flex justify-between">
-          <p className="mb-8 max-w-[540px] text-left text-sm text-white/50">
+
+      <div className="mx-auto max-w-[1110px]">
+        <div className="flex justify-between ">
+          <p className="mb-8 text-center font-medium text-white/50 md:text-left lg:max-w-[540px]">
             Audiophile is an all-in-one stop to fulfill your audio needs.
             We&apos;re a small team of music lovers and sound specialists who
             are devoted to helping you get the most out of personal audio. Come
             and visit our demo facility - we’re open 7 days a week.
           </p>
 
-          <div className="flex items-center text-white">
-            <button className="mr-8 text-lg font-bold hover:text-primary active:text-primary">
-              <Facebook />
-            </button>
-            <button className="mr-8 text-lg font-bold hover:text-primary active:text-primary">
-              <Twitter />
-            </button>
-            <button className="text-lg font-bold hover:text-primary active:text-primary">
-              <Instagram />
-            </button>
+          <div className="hidden items-center text-white lg:flex">
+            <SocialLinkButtons />
           </div>
         </div>
-        <p className="text-left text-sm text-white/50">
-          © {new Date().getFullYear()} Audiophile. All rights reserved.
-        </p>
+
+        <div className="md: flex flex-col items-center text-center md:flex-row md:items-start md:justify-between">
+          <p className="text-left text-sm font-bold text-white/50">
+            © {new Date().getFullYear()} Audiophile. All rights reserved.
+          </p>
+
+          <div className="mt-8 flex items-center text-white md:mt-0 lg:hidden">
+            <SocialLinkButtons />
+          </div>
+        </div>
       </div>
-      {isOpen && <MobileNavigation isOpen={isOpen} onClose={onClose} />}
     </footer>
   );
 };
