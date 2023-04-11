@@ -1,6 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import { SignInButton, SignOutButton, useUser } from "@clerk/nextjs";
+import { useUser } from "@clerk/nextjs";
 import {
   BestGearSection,
   CategoryList,
@@ -53,17 +53,18 @@ const Home: NextPage = () => {
           {productMockData[2] && (
             <ProductSplitContent product={productMockData[2]} />
           )}
+        </div>
 
+        <div className="flex w-full flex-col items-center px-6 md:px-10 xl:px-0">
           <BestGearSection />
         </div>
-
-        <div>
-          {!user.isSignedIn ? (
-            <SignInButton>Sign in with Clerk</SignInButton>
-          ) : (
-            <SignOutButton />
-          )}
-        </div>
+        {/*<div>*/}
+        {/*  {!user.isSignedIn ? (*/}
+        {/*    <SignInButton>Sign in with Clerk</SignInButton>*/}
+        {/*  ) : (*/}
+        {/*    <SignOutButton />*/}
+        {/*  )}*/}
+        {/*</div>*/}
       </section>
     </>
   );
