@@ -10,25 +10,24 @@ const Navbar = () => {
 
   const onClose = () => setIsOpen(false);
 
+  console.log("isOpen: ", isOpen);
+
   return (
-    <header className="absolute top-6 left-0 z-[9999] flex w-full flex-col items-center justify-center">
-      <div className="flex w-full items-center justify-between px-6 lg:mx-12 lg:max-w-[1110px] lg:px-0 xl:mx-0">
-        <button
-          className="flex lg:hidden"
-          type="button"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <Menu />
-        </button>
+    <header className="absolute top-6 left-0 z-[9999] flex w-full flex-col items-center justify-center px-10 lg:left-1/2 lg:-translate-x-1/2 lg:transform">
+      <div className="grid w-full max-w-[1110px] grid-cols-navigation-mobile items-center md:grid-cols-navigation lg:items-start lg:px-0">
+        {/* Logo for lg: screens */}
+        <div className="col-span-1 hidden items-center justify-start lg:flex">
+          <Image
+            src="/assets/shared/desktop/logo.svg"
+            alt="logo"
+            width={143}
+            height={25}
+          />
+        </div>
 
-        <Image
-          src="/assets/shared/desktop/logo.svg"
-          alt="logo"
-          width={143}
-          height={25}
-        />
+        {/* Navigation */}
 
-        <nav>
+        <nav className="">
           <ul className="hidden gap-[2.125rem] lg:flex">
             <li>
               <Link href="/" className="hover:text-primary">
@@ -55,9 +54,28 @@ const Navbar = () => {
           {isOpen && <MobileNavigation isOpen={isOpen} onClose={onClose} />}
         </nav>
 
-        <button onClick={() => console.log("Clicked")}>
-          <Cart className="text-white" />
-        </button>
+        {/* Cart Button for lg: screens */}
+        <div className="col-span-1 hidden items-center justify-end lg:flex ">
+          <button onClick={() => console.log("Clicked")}>
+            <Cart className="text-white" />
+          </button>
+        </div>
+
+        {/* Menu Button, Logo, and Cart for mobile and tablet */}
+        <div className="col-span-3 flex items-center justify-between lg:hidden">
+          <button className="" type="button" onClick={() => setIsOpen(!isOpen)}>
+            <Menu />
+          </button>
+          <Image
+            src="/assets/shared/desktop/logo.svg"
+            alt="logo"
+            width={143}
+            height={25}
+          />
+          <button onClick={() => console.log("Clicked")}>
+            <Cart className="text-white" />
+          </button>
+        </div>
       </div>
 
       <div className="mt-9 h-[1px] w-full bg-white/20 lg:max-w-[1110px]" />
