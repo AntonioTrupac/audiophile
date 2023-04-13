@@ -7,3 +7,4 @@ export { default as CategoryList } from "./categoryList";
 export { default as ProductContentWithDescription } from "./ProductContentWithDescription";
 export { default as ProductContentWithName } from "./ProductContentWithName";
 export { default as ProductSplitContent } from "./ProductSplitContent";
+export { default as LoadingSpinner } from "./LoadingSpinner";
