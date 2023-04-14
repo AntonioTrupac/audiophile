@@ -16,7 +16,10 @@ const config = {
    */
   i18n: {
     locales: ["en"],
-    defaultLocale: "en",
+    defaultLocale: "en"
   },
+  images: {
+    domains: ["res.cloudinary.com"]
+  }
 };
 export default config;

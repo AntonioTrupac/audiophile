@@ -16,10 +16,13 @@ model ImageSizes {
   mobileURL      String
   tabletURL      String
   desktopURL     String
-  productImageId String
-  productImage   ProductImages @relation(fields: [productImageId], references: [id])
+  productImageId String?
+  productImage   ProductImages? @relation(fields: [productImageId], references: [id])
 
-  @@index([productImageId])
+  categoryImageId String?
+  categoryImage   CategoryImages? @relation(fields: [categoryImageId], references: [id])
+
+  @@index([productImageId, categoryImageId])
 }
 
 model ProductImages {
@@ -33,6 +36,17 @@ model ProductImages {
   @@index([productId])
 }
 
+model CategoryImages {
+  id         String       @id @default(cuid())
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
+  imageSizes ImageSizes[]
+  productId  String       @unique
+  product    Product      @relation(name: "CategoryImagesOnProduct", fields: [productId], references: [id])
+
+  @@index([productId])
+}
+
 model Product {
   id                String           @id @default(cuid())
   createdAt         DateTime         @default(now())
@@ -42,8 +56,9 @@ model Product {
   category          String
   new               Boolean          @default(false)
   price             Int
-  description       String           @db.VarChar(255)
+  description       String           @db.Text
   images            ProductImages[]  @relation("ProductImagesOnProduct")
+  categoryImages    CategoryImages?  @relation("CategoryImagesOnProduct")
   cartItems         CartItem[]
   ProductCategory   ProductCategory? @relation(fields: [productCategoryId], references: [id])
   productCategoryId String?

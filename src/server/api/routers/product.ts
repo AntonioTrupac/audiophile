@@ -45,4 +45,39 @@ export const productRouter = createTRPCRouter({
       },
     });
   }),
+
+  getHeadphonesCategory: publicProcedure.query(async ({ ctx }) => {
+    const product = await ctx.prisma.product.findMany({
+      where: {
+        category: "headphones",
+      },
+      include: {
+        categoryImages: {
+          include: {
+            imageSizes: true,
+          },
+        },
+      },
+    });
+
+    return product.map((p) => {
+      return p;
+    });
+  }),
+
+  getCategories: publicProcedure.query(({ ctx }) => {
+    return ctx.prisma.productCategory.findMany({
+      include: {
+        products: {
+          include: {
+            images: {
+              include: {
+                imageSizes: true,
+              },
+            },
+          },
+        },
+      },
+    });
+  }),
 });
