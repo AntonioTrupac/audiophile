@@ -29,12 +29,12 @@ const CategorySection = ({ product }: CategorySectionProps) => {
   // const { data } = api.product.getHeadphonesCategory.useQuery();
 
   return (
-    <section className="flex">
+    <section className="flex flex-col lg:flex-row">
       {product.categoryImages?.imageSizes &&
         product.categoryImages.imageSizes.map((image) => (
           <div
             key={product.id}
-            className="relative lg:aspect-[0.964285714] lg:h-[560px] lg:w-auto"
+            className="relative aspect-[0.928977273] w-full md:aspect-[1.95738636] lg:aspect-[0.964285714]  lg:h-[560px]"
           >
             <Image
               src={image.desktopURL}
