@@ -32,7 +32,10 @@ const CategorySection = ({ product }: CategorySectionProps) => {
     <section className="flex">
       {product.categoryImages?.imageSizes &&
         product.categoryImages.imageSizes.map((image) => (
-          <div className="relative lg:aspect-[0.964285714] lg:h-[560px] lg:w-auto">
+          <div
+            key={product.id}
+            className="relative lg:aspect-[0.964285714] lg:h-[560px] lg:w-auto"
+          >
             <Image
               src={image.desktopURL}
               alt={product.name}
