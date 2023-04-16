@@ -24,9 +24,13 @@ const listData = [
   },
 ];
 
-const CategoryList = () => {
+const CategoryList = ({
+  className = "px-6 md:px-10 lg:px-0 pt-28 pb-24 lg:py-[7.5rem]",
+}: {
+  className?: string;
+}) => {
   return (
-    <div className="w-full max-w-[1110px] px-6 pt-28 pb-24 md:px-10 lg:py-[7.5rem]">
+    <div className={`w-full max-w-[1110px] ${className}`}>
       <ul className="flex flex-col gap-16 md:flex-row lg:gap-[1.875rem]">
         {listData.map((item) => (
           <CategoryListItem

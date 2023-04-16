@@ -67,6 +67,18 @@ h6 {
     color: #000;
 }
 
+@media screen and (max-width: 767px) {
+
+    h1, h2 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        line-height: 2.375rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #000;
+    }
+}
+
 p {
     font-size: 0.9375rem;
     font-weight: 500;

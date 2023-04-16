@@ -4,6 +4,7 @@ import {
   publicProcedure,
 } from "~/server/api/trpc";
 import { z } from "zod";
+import { TRPCError } from "@trpc/server";
 
 export const productRouter = createTRPCRouter({
   createOrderProduct: privateProcedure
@@ -59,6 +60,8 @@ export const productRouter = createTRPCRouter({
         },
       },
     });
+
+    if (!product) throw new TRPCError({ code: "NOT_FOUND" });
 
     return product.map((p) => {
       return p;

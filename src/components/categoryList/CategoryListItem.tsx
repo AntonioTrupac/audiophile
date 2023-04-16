@@ -29,6 +29,7 @@ const CategoryListItem = ({ image, categoryTitle }: CategoryListItemProps) => {
           variant="tertiary"
           hasIcon
           href={`/${categoryTitle.toLowerCase()}`}
+          className="mb-2"
         >
           Shop
         </LinkButton>

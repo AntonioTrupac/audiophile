@@ -14,7 +14,7 @@ const Footer = () => {
         />
 
         <nav className="mt-8 lg:ml-8 lg:mt-0">
-          <ul className="flex flex-col gap-[2.125rem] md:flex-row">
+          <ul className="flex flex-col gap-[2.125rem] text-center md:flex-row md:text-left">
             <li>
               <Link href="/" className="hover:text-primary">
                 Home
