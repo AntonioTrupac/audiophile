@@ -11,36 +11,36 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model ImageSizes {
+model ImageSize {
   id             Int        @id @default(autoincrement())
   mobileURL      String
   tabletURL      String
   desktopURL     String
   productImageId Int?
-  productImage   ProductImages? @relation(fields: [productImageId], references: [id])
+  productImage   ProductImage? @relation(fields: [productImageId], references: [id])
 
   categoryImageId Int?
-  categoryImage   CategoryImages? @relation(fields: [categoryImageId], references: [id])
+  categoryImage   CategoryImage? @relation(fields: [categoryImageId], references: [id])
 
   @@index([productImageId, categoryImageId])
 }
 
-model ProductImages {
-  id         Int       @id @default(autoincrement())
+model ProductImage {
+  id         Int          @id @default(autoincrement())
   createdAt  DateTime     @default(now())
   updatedAt  DateTime     @updatedAt
-  imageSizes ImageSizes[]
+  imageSizes ImageSize[]
   productId  Int
   product    Product      @relation(name: "ProductImagesOnProduct", fields: [productId], references: [id])
 
   @@index([productId])
 }
 
-model CategoryImages {
+model CategoryImage {
   id         Int          @id @default(autoincrement())
   createdAt  DateTime     @default(now())
   updatedAt  DateTime     @updatedAt
-  imageSizes ImageSizes[]
+  imageSizes ImageSize[]
   productId  Int       @unique
   product    Product      @relation(name: "CategoryImagesOnProduct", fields: [productId], references: [id])
 
@@ -48,7 +48,7 @@ model CategoryImages {
 }
 
 model Product {
-  id                String           @id @default(autoincrement())
+  id                Int           @id @default(autoincrement())
   createdAt         DateTime         @default(now())
   updatedAt         DateTime         @updatedAt
   slug              String           @unique
@@ -57,8 +57,8 @@ model Product {
   new               Boolean          @default(false)
   price             Int
   description       String           @db.Text
-  images            ProductImages[]  @relation("ProductImagesOnProduct")
-  categoryImages    CategoryImages?  @relation("CategoryImagesOnProduct")
+  images            ProductImage[]  @relation("ProductImagesOnProduct")
+  categoryImages    CategoryImage?  @relation("CategoryImagesOnProduct")
   cartItems         CartItem[]
   ProductCategory   ProductCategory? @relation(fields: [productCategoryId], references: [id])
   productCategoryId Int?
