@@ -2,14 +2,14 @@ import Image from "next/image";
 import { LinkButton } from "~/components";
 
 type ProductImageSize = {
-  id: string;
+  id: number;
   desktopURL: string;
   tabletURL: string;
   mobileURL: string;
 };
 
 type ProductWithCategoryImages = {
-  id: string;
+  id: number;
   name: string;
   price: number;
   description: string;

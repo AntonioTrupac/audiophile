@@ -1,4 +1,4 @@
-import { prisma } from "../src/server/db";
+import { prisma } from "~/server/db";
 import { categoryImage } from "./data/categoryImage";
 import { imageSizes } from "./data/imageSizes";
 import { product } from "./data/product";
