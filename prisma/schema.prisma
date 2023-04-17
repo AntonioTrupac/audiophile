@@ -41,22 +41,22 @@ model CategoryImage {
   createdAt  DateTime     @default(now())
   updatedAt  DateTime     @updatedAt
   imageSizes ImageSize[]
-  productId  Int       @unique
+  productId  Int          @unique
   product    Product      @relation(name: "CategoryImagesOnProduct", fields: [productId], references: [id])
 
   @@index([productId])
 }
 
 model Product {
-  id                Int           @id @default(autoincrement())
-  createdAt         DateTime         @default(now())
-  updatedAt         DateTime         @updatedAt
-  slug              String           @unique
+  id                Int             @id @default(autoincrement())
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+  slug              String          @unique
   name              String
   category          String
-  new               Boolean          @default(false)
+  new               Boolean         @default(false)
   price             Int
-  description       String           @db.Text
+  description       String          @db.Text
   images            ProductImage[]  @relation("ProductImagesOnProduct")
   categoryImages    CategoryImage?  @relation("CategoryImagesOnProduct")
   cartItems         CartItem[]
