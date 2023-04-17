@@ -60,20 +60,6 @@ model Product {
   images            ProductImage[]  @relation("ProductImagesOnProduct")
   categoryImages    CategoryImage?  @relation("CategoryImagesOnProduct")
   cartItems         CartItem[]
-  ProductCategory   ProductCategory? @relation(fields: [productCategoryId], references: [id])
-  productCategoryId Int?
-
-  @@index([productCategoryId])
-}
-
-model ProductCategory {
-  id            Int    @id @default(autoincrement())
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-  name          String
-  categoryImage String?
-  description   String    @db.VarChar(255)
-  products      Product[]
 }
 
 model Cart {
