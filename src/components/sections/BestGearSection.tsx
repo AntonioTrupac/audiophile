@@ -13,9 +13,15 @@ const bestGearData = {
   alt: "Best audio gear",
 };
 
-const BestGearSection = () => {
+const BestGearSection = ({
+  className = "my-24 lg:my-[12.5rem]",
+}: {
+  className: string;
+}) => {
   return (
-    <div className="my-24 flex w-full max-w-[1110px] flex-col items-center justify-center gap-10 lg:my-[12.5rem] lg:flex-row lg:gap-[7.8125rem]">
+    <div
+      className={`flex w-full max-w-[1110px] flex-col items-center justify-center gap-10 lg:flex-row lg:gap-[7.8125rem] ${className}`}
+    >
       <div className="relative aspect-[1.09] w-full md:aspect-[2.29666667] lg:order-2 lg:aspect-[0.92517] lg:max-h-[588px]">
         <Image
           src={bestGearData.mobile.src}

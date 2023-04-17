@@ -4,6 +4,7 @@ import {
   CategoryList,
   CategorySection,
   LoadingSpinner,
+  ProductCategoryHeader,
 } from "~/components";
 
 const HeadphonesList = () => {
@@ -22,7 +23,7 @@ const HeadphonesList = () => {
   }
 
   return (
-    <div>
+    <div className="mt-16 mb-[120px] md:my-[120px] lg:my-[160px]">
       {data.map((item, index) => (
         <CategorySection
           product={item}
@@ -43,18 +44,14 @@ const Headphones = () => {
     <div className="flex flex-col items-center">
       <h1 className="sr-only">Headphones page</h1>
 
-      <div className="flex h-[192px] w-full items-end justify-center bg-black md:h-[336px] 2xl:max-w-[1440px]">
-        <h2 className="mb-[32px] text-white md:mb-[95px] lg:text-[3.5rem]">
-          Headphones
-        </h2>
-      </div>
+      <ProductCategoryHeader title="Headphones" />
 
       <div className="flex flex-col px-6 md:px-10 lg:px-8">
         <HeadphonesList />
 
         <CategoryList className="pt-10 pb-0" />
 
-        <BestGearSection />
+        <BestGearSection className="my-[120px] lg:my-[160px]" />
       </div>
     </div>
   );

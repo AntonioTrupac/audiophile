@@ -28,7 +28,7 @@ interface CategorySectionProps {
 const CategorySection = ({ product, isContentLeft }: CategorySectionProps) => {
   return (
     <section
-      className={`mt-20 flex max-w-[1110px] flex-col gap-8 first:mt-16 last:mb-20 md:gap-14 md:first:mt-[120px] lg:mt-[160px] lg:flex-row lg:gap-[125px] lg:first:mt-[160px] lg:last:mb-[160px] ${
+      className={`mt-20 flex max-w-[1110px] flex-col gap-8 md:mt-[120px] md:gap-14 md:first:mt-0 lg:mt-[160px] lg:flex-row lg:gap-[125px] ${
         isContentLeft ? "lg:flex-row-reverse" : ""
       }`}
     >
@@ -61,7 +61,7 @@ const CategorySection = ({ product, isContentLeft }: CategorySectionProps) => {
           </div>
         ))}
 
-      <div className="flex flex-col items-center justify-center text-center lg:text-left">
+      <div className="flex flex-col items-center justify-center text-center lg:items-start lg:text-left">
         {product.new && (
           <span className="overline-custom mb-4 text-primary">new product</span>
         )}
