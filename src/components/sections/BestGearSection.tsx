@@ -16,7 +16,7 @@ const bestGearData = {
 const BestGearSection = ({
   className = "my-24 lg:my-[12.5rem]",
 }: {
-  className: string;
+  className?: string;
 }) => {
   return (
     <div
