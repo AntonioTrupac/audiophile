@@ -6,11 +6,13 @@ import {
 import { z } from "zod";
 import { TRPCError } from "@trpc/server";
 
+const CategoryTypes = z.enum(["headphones", "speakers", "earphones"]);
+
 export const productRouter = createTRPCRouter({
   createOrderProduct: privateProcedure
     .input(
       z.object({
-        productId: z.string(),
+        productId: z.number(),
         quantity: z.number(),
       })
     )
@@ -19,7 +21,7 @@ export const productRouter = createTRPCRouter({
 
       const createdOrder = await ctx.prisma.cart.create({
         data: {
-          userId,
+          userId: Number(userId),
           // productId: input.productId,
           // quantity: input.quantity,
           cartItems: {
@@ -33,6 +35,8 @@ export const productRouter = createTRPCRouter({
           updatedAt: new Date(),
         },
       });
+
+      return createdOrder;
     }),
 
   getAll: publicProcedure.query(({ ctx }) => {
@@ -47,40 +51,26 @@ export const productRouter = createTRPCRouter({
     });
   }),
 
-  getHeadphonesCategory: publicProcedure.query(async ({ ctx }) => {
-    const product = await ctx.prisma.product.findMany({
-      where: {
-        category: "headphones",
-      },
-      include: {
-        categoryImages: {
-          include: {
-            imageSizes: true,
-          },
+  getProductsByCategory: publicProcedure
+    .input(CategoryTypes)
+    .query(async ({ ctx, input }) => {
+      const product = await ctx.prisma.product.findMany({
+        where: {
+          category: input,
         },
-      },
-    });
-
-    if (!product) throw new TRPCError({ code: "NOT_FOUND" });
-
-    return product.map((p) => {
-      return p;
-    });
-  }),
-
-  getCategories: publicProcedure.query(({ ctx }) => {
-    return ctx.prisma.productCategory.findMany({
-      include: {
-        products: {
-          include: {
-            images: {
-              include: {
-                imageSizes: true,
-              },
+        include: {
+          categoryImages: {
+            include: {
+              imageSizes: true,
             },
           },
         },
-      },
-    });
-  }),
+      });
+
+      if (!product) throw new TRPCError({ code: "NOT_FOUND" });
+
+      return product.map((p) => {
+        return p;
+      });
+    }),
 });

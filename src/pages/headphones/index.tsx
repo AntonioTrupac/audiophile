@@ -8,7 +8,8 @@ import {
 } from "~/components";
 
 const HeadphonesList = () => {
-  const { data, isLoading } = api.product.getHeadphonesCategory.useQuery();
+  const { data, isLoading } =
+    api.product.getProductsByCategory.useQuery("headphones");
 
   if (isLoading) {
     return (
@@ -38,7 +39,7 @@ const HeadphonesList = () => {
 const Headphones = () => {
   // fetch early
   // since this is React query under the hood, it will be cached, so it fetches only once
-  api.product.getHeadphonesCategory.useQuery();
+  api.product.getProductsByCategory.useQuery("headphones");
 
   return (
     <div className="flex flex-col items-center">
