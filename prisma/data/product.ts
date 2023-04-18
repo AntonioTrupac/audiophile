@@ -29,4 +29,24 @@ export const product = [
     new: false,
     price: 899,
   },
+  {
+    id: 4,
+    slug: "zx9-speaker",
+    name: "ZX9 Speaker",
+    category: "speakers",
+    description:
+      "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
+    new: true,
+    price: 4500,
+  },
+  {
+    id: 5,
+    slug: "zx7-speaker",
+    name: "ZX7 Speaker",
+    category: "speakers",
+    description:
+      "Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
+    new: false,
+    price: 3500,
+  },
 ];
