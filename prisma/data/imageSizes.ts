@@ -51,4 +51,14 @@ export const imageSizes = [
       "https://res.cloudinary.com/dg93gnfxf/image/upload/v1681824947/audiophile/image-category-page-preview_hjcumf.jpg",
     categoryImageId: 5,
   },
+  {
+    id: 6,
+    mobileURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1681925854/audiophile/image-category-page-preview_pltrbz.jpg",
+    tabletURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1681925851/audiophile/image-category-page-preview_srfknd.jpg",
+    desktopURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1681925848/audiophile/image-category-page-preview_w32gmp.jpg",
+    categoryImageId: 6,
+  },
 ];

@@ -45,7 +45,7 @@ const Speakers = () => {
 
       <ProductCategoryHeader title="Speakers" />
 
-      <div className="flex w-full max-w-[1110px] flex-col px-6 md:px-10 lg:px-8">
+      <div className="flex w-full max-w-[1110px] flex-col px-6 md:px-10 lg:px-8 xl:px-0">
         <SpeakersList />
 
         <CategoryList className="pt-10 pb-0" />

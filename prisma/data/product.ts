@@ -49,4 +49,14 @@ export const product = [
     new: false,
     price: 3500,
   },
+  {
+    id: 6,
+    slug: "yx1-earphones",
+    name: "YX1 Wireless Earphones",
+    category: "earphones",
+    description:
+      "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
+    new: true,
+    price: 599,
+  },
 ];

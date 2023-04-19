@@ -19,4 +19,8 @@ export const categoryImage = [
     id: 5,
     productId: 5,
   },
+  {
+    id: 6,
+    productId: 6,
+  },
 ];

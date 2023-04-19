@@ -38,7 +38,7 @@ const HeadphonesList = () => {
 
 const Headphones = () => {
   // fetch early
-  // since this is React query under the hood, it will be cached, so it fetches only once
+  // since this is React query on top of tRPC, it will be cached, so it fetches only once
   api.product.getProductsByCategory.useQuery("headphones");
 
   return (
@@ -47,7 +47,7 @@ const Headphones = () => {
 
       <ProductCategoryHeader title="Headphones" />
 
-      <div className="flex w-full max-w-[1110px] flex-col px-6 md:px-10 lg:px-8">
+      <div className="flex w-full max-w-[1110px] flex-col px-6 md:px-10 lg:px-8 xl:px-0">
         <HeadphonesList />
 
         <CategoryList className="pt-10 pb-0" />
