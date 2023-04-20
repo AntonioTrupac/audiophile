@@ -73,4 +73,25 @@ export const productRouter = createTRPCRouter({
         return p;
       });
     }),
+
+  getBySlug: publicProcedure
+    .input(z.object({ slug: z.string() }))
+    .query(async ({ ctx, input }) => {
+      const product = await ctx.prisma.product.findUnique({
+        where: {
+          slug: input.slug,
+        },
+        include: {
+          categoryImages: {
+            include: {
+              imageSizes: true,
+            },
+          },
+        },
+      });
+
+      if (!product) throw new TRPCError({ code: "NOT_FOUND" });
+
+      return product;
+    }),
 });
