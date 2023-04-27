@@ -57,9 +57,28 @@ model Product {
   new               Boolean         @default(false)
   price             Int
   description       String          @db.Text
+  featureTextOverview String        @db.Text @default("")
+  featureTextDetails String         @db.Text  @default("")
   images            ProductImage[]  @relation("ProductImagesOnProduct")
   categoryImages    CategoryImage?  @relation("CategoryImagesOnProduct")
+  accessories       ProductAccessory[]
   cartItems         CartItem[]
+}
+
+model Accessory {
+  id                Int               @id @default(autoincrement())
+  name              String            @unique
+  productAccessories ProductAccessory[]
+}
+
+model ProductAccessory {
+  productId  Int
+  product    Product @relation(fields: [productId], references: [id])
+  accessoryId Int
+  accessory   Accessory @relation(fields: [accessoryId], references: [id])
+  quantity    Int
+
+  @@id([productId, accessoryId])
 }
 
 model Cart {

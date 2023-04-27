@@ -1,12 +1,22 @@
 import { api } from "~/utils/api";
-import { BestGearSection } from "~/components";
+import {
+  BestGearSection,
+  CategoryList,
+  LoadingSpinner,
+  ProductSection,
+} from "~/components";
 import { type GetStaticProps, type NextPage } from "next";
 import { generateSSGHelper } from "~/server/helpers/ssgHelper";
 
 const Headphone: NextPage<{ slug: string }> = ({ slug }) => {
   const { data, isLoading } = api.product.getBySlug.useQuery({ slug });
 
-  if (isLoading) return <div>loading</div>;
+  if (isLoading)
+    return (
+      <div className="flex h-screen w-full items-center justify-center">
+        <LoadingSpinner size={70} />
+      </div>
+    );
 
   if (!data) return <div>Something went wrong</div>;
 
@@ -16,6 +26,8 @@ const Headphone: NextPage<{ slug: string }> = ({ slug }) => {
       <div className="lg:[97px] flex h-[90px] w-full items-end justify-center bg-black 2xl:max-w-[1440px]" />
 
       <div className="flex w-full max-w-[1110px] flex-col px-6 md:px-10 lg:px-8 xl:px-0">
+        <ProductSection product={data} />
+        <CategoryList className="pt-10 pb-0" />
         <BestGearSection className="my-[120px] lg:my-[160px]" />
       </div>
     </div>
