@@ -31,7 +31,8 @@ const config = {
       gridTemplateColumns: {
         "hero-2": "minmax(0, 396px), minmax(0, 714px)",
         "navigation": "340px 1fr 23px",
-        "navigation-mobile": "20px 1fr 23px"
+        "navigation-mobile": "20px 1fr 23px",
+        "feature": "1fr 350px"
       }
     }
   },

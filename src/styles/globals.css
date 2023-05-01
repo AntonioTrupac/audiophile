@@ -67,8 +67,15 @@ h6 {
     color: #000;
 }
 
-@media screen and (max-width: 767px) {
+.overline-custom {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.1875rem;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
 
+@media screen and (max-width: 767px) {
     h1, h2 {
         font-size: 1.75rem;
         font-weight: 700;
@@ -76,6 +83,33 @@ h6 {
         letter-spacing: 1px;
         text-transform: uppercase;
         color: #000;
+    }
+
+    .overline-custom {
+        font-size: 0.75rem;
+        font-weight: 400;
+        line-height: 1rem;
+        letter-spacing: 8.57px;
+        text-transform: uppercase;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    h1, h2 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        line-height: 2.375rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #000;
+    }
+
+    .overline-custom {
+        font-size: 0.75rem;
+        font-weight: 400;
+        line-height: 1rem;
+        letter-spacing: 9px;
+        text-transform: uppercase;
     }
 }
 
@@ -94,13 +128,6 @@ p {
     color: #000;
 }
 
-.overline-custom {
-    font-size: 0.875rem;
-    font-weight: 400;
-    line-height: 1.1875rem;
-    letter-spacing: 10px;
-    text-transform: uppercase;
-}
 
 a {
     font-size: 0.8125rem;

@@ -17,7 +17,7 @@ const CounterButtons = ({
       <button
         onClick={decrement}
         aria-label="decrement"
-        className="text-primary-orange flex border-none bg-transparent px-0 py-0 hover:opacity-80 active:opacity-80"
+        className="flex border-none bg-transparent px-0 py-0 text-black/25 hover:opacity-80 active:opacity-80"
       >
         <Minus />
       </button>
@@ -29,7 +29,7 @@ const CounterButtons = ({
       <button
         onClick={increment}
         aria-label="increment"
-        className="text-primary-orange flex border-none bg-transparent px-0 py-0 hover:opacity-80 active:opacity-80"
+        className="flex border-none bg-transparent px-0 py-0 text-black/25 hover:opacity-80 active:opacity-80"
       >
         <Plus />
       </button>

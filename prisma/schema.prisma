@@ -30,7 +30,7 @@ model ProductImage {
   createdAt  DateTime     @default(now())
   updatedAt  DateTime     @updatedAt
   imageSizes ImageSize[]
-  productId  Int
+  productId  Int          @unique
   product    Product      @relation(name: "ProductImagesOnProduct", fields: [productId], references: [id])
 
   @@index([productId])
@@ -59,7 +59,7 @@ model Product {
   description       String          @db.Text
   featureTextOverview String        @db.Text @default("")
   featureTextDetails String         @db.Text  @default("")
-  images            ProductImage[]  @relation("ProductImagesOnProduct")
+  images            ProductImage?  @relation("ProductImagesOnProduct")
   categoryImages    CategoryImage?  @relation("CategoryImagesOnProduct")
   accessories       ProductAccessory[]
   cartItems         CartItem[]

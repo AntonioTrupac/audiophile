@@ -7,6 +7,8 @@ import {
 } from "~/components";
 import { type GetStaticProps, type NextPage } from "next";
 import { generateSSGHelper } from "~/server/helpers/ssgHelper";
+import Link from "next/link";
+import FeatureSection from "~/components/sections/FeatureSection";
 
 const Headphone: NextPage<{ slug: string }> = ({ slug }) => {
   const { data, isLoading } = api.product.getBySlug.useQuery({ slug });
@@ -25,8 +27,22 @@ const Headphone: NextPage<{ slug: string }> = ({ slug }) => {
       <h1 className="sr-only">{data.name} page</h1>
       <div className="lg:[97px] flex h-[90px] w-full items-end justify-center bg-black 2xl:max-w-[1440px]" />
 
-      <div className="flex w-full max-w-[1110px] flex-col px-6 md:px-10 lg:px-8 xl:px-0">
+      <div className="mt-4 flex w-full max-w-[1110px] px-6 md:mt-8 md:px-10 lg:mt-20 lg:px-8 xl:px-0">
+        <Link
+          href="/headphones"
+          className="capitalize text-black/50 hover:text-black/40"
+        >
+          Go back
+        </Link>
+      </div>
+
+      <div className="mt-6 flex w-full max-w-[1110px] flex-col px-6 md:px-10 lg:mt-12 lg:px-8 xl:px-0">
         <ProductSection product={data} />
+        <FeatureSection
+          featureTextDetails={data.featureTextDetails}
+          featureTextOverview={data.featureTextOverview}
+          accessories={data.accessories}
+        />
         <CategoryList className="pt-10 pb-0" />
         <BestGearSection className="my-[120px] lg:my-[160px]" />
       </div>

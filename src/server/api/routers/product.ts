@@ -92,6 +92,11 @@ export const productRouter = createTRPCRouter({
               accessory: true,
             },
           },
+          images: {
+            include: {
+              imageSizes: true,
+            },
+          },
         },
       });
 

@@ -61,4 +61,34 @@ export const imageSizes = [
       "https://res.cloudinary.com/dg93gnfxf/image/upload/v1681925848/audiophile/image-category-page-preview_w32gmp.jpg",
     categoryImageId: 6,
   },
+  {
+    id: 7,
+    mobileURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1682875044/audiophile/Product%20Images%20for%20audiophile/image-product_eowcxz.jpg",
+    tabletURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1682875041/audiophile/Product%20Images%20for%20audiophile/image-product_hd1k9g.jpg",
+    desktopURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1682875036/audiophile/Product%20Images%20for%20audiophile/image-product_wu5ino.jpg",
+    productImageId: 1,
+  },
+  {
+    id: 8,
+    mobileURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1682877689/audiophile/Product%20Images%20for%20audiophile/image-product_azb3b5.jpg",
+    tabletURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1682877686/audiophile/Product%20Images%20for%20audiophile/image-product_a5eczi.jpg",
+    desktopURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1682877684/audiophile/Product%20Images%20for%20audiophile/image-product_p9jiyj.jpg",
+    productImageId: 2,
+  },
+  {
+    id: 9,
+    mobileURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1682877803/audiophile/Product%20Images%20for%20audiophile/image-product_kzphnh.jpg",
+    tabletURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1682877800/audiophile/Product%20Images%20for%20audiophile/image-product_kvkgnh.jpg",
+    desktopURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1682877796/audiophile/Product%20Images%20for%20audiophile/image-product_jpxt9l.jpg",
+    productImageId: 3,
+  },
 ];

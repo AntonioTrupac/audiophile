@@ -10,7 +10,7 @@ const Plus = ({
       width={width}
       height={height}
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 12 12"
+      viewBox="0 0 12 14"
       {...rest}
     >
       <defs>
