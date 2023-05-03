@@ -4,6 +4,7 @@ import { imageSizes } from "./data/imageSizes";
 import { product } from "./data/product";
 import { accessory, productAccessories } from "./data/productAccessories";
 import { productImage } from "./data/productImage";
+import { galleryImage } from "./data/galleryImage";
 
 async function main() {
   console.log("Start seeding ...");
@@ -20,6 +21,9 @@ async function main() {
   await prisma.categoryImage.deleteMany();
   console.log("Deleted records in categoryImage table");
 
+  await prisma.galleryImage.deleteMany();
+  console.log("Deleted records in galleryImage table");
+
   await prisma.productImage.deleteMany();
   console.log("Deleted records in productImage table");
 
@@ -29,6 +33,7 @@ async function main() {
   await prisma.$queryRaw`ALTER TABLE Product AUTO_INCREMENT = 1`;
   await prisma.$queryRaw`ALTER TABLE CategoryImage AUTO_INCREMENT = 1`;
   await prisma.$queryRaw`ALTER TABLE ProductImage AUTO_INCREMENT = 1`;
+  await prisma.$queryRaw`ALTER TABLE GalleryImage AUTO_INCREMENT = 1`;
   await prisma.$queryRaw`ALTER TABLE ImageSize AUTO_INCREMENT = 1`;
   await prisma.$queryRaw`ALTER TABLE Accessory AUTO_INCREMENT = 1`;
   await prisma.$queryRaw`ALTER TABLE ProductAccessory AUTO_INCREMENT = 1`;
@@ -55,6 +60,11 @@ async function main() {
     data: productImage,
   });
   console.log("Created records in productImage table");
+
+  const gI = await prisma.galleryImage.createMany({
+    data: galleryImage,
+  });
+  console.log("Created records in galleryImage table");
 
   const iS = await prisma.imageSize.createMany({
     data: imageSizes,

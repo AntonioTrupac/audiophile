@@ -91,4 +91,34 @@ export const imageSizes = [
       "https://res.cloudinary.com/dg93gnfxf/image/upload/v1682877796/audiophile/Product%20Images%20for%20audiophile/image-product_jpxt9l.jpg",
     productImageId: 3,
   },
+  {
+    id: 10,
+    mobileURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1683117422/audiophile/Product%20Images%20for%20audiophile/gallery/headphones%20mark%202/image-gallery-1_eguqjn.jpg",
+    tabletURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1683117416/audiophile/Product%20Images%20for%20audiophile/gallery/headphones%20mark%202/image-gallery-1_roiwjy.jpg",
+    desktopURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1683117408/audiophile/Product%20Images%20for%20audiophile/gallery/headphones%20mark%202/image-gallery-1_wydbq7.jpg",
+    galleryImageId: 1,
+  },
+  {
+    id: 11,
+    mobileURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1683117422/audiophile/Product%20Images%20for%20audiophile/gallery/headphones%20mark%202/image-gallery-2_m5e3pp.jpg",
+    tabletURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1683117416/audiophile/Product%20Images%20for%20audiophile/gallery/headphones%20mark%202/image-gallery-2_z1bc2p.jpg",
+    desktopURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1683117408/audiophile/Product%20Images%20for%20audiophile/gallery/headphones%20mark%202/image-gallery-2_jfdrfo.jpg",
+    galleryImageId: 2,
+  },
+  {
+    id: 12,
+    mobileURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1683117423/audiophile/Product%20Images%20for%20audiophile/gallery/headphones%20mark%202/image-gallery-3_xkbde6.jpg",
+    tabletURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1683117416/audiophile/Product%20Images%20for%20audiophile/gallery/headphones%20mark%202/image-gallery-3_hqu6ez.jpg",
+    desktopURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1683117408/audiophile/Product%20Images%20for%20audiophile/gallery/headphones%20mark%202/image-gallery-3_svpxoe.jpg",
+    galleryImageId: 3,
+  },
 ];

@@ -22,6 +22,9 @@ model ImageSize {
   categoryImageId Int?
   categoryImage   CategoryImage? @relation(fields: [categoryImageId], references: [id])
 
+  galleryImageId Int?
+  galleryImage   GalleryImage? @relation(fields: [galleryImageId], references: [id])
+
   @@index([productImageId, categoryImageId])
 }
 
@@ -47,6 +50,17 @@ model CategoryImage {
   @@index([productId])
 }
 
+model GalleryImage {
+  id         Int          @id @default(autoincrement())
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
+  imageSizes ImageSize[]
+  productId  Int
+  product    Product      @relation("GalleryImagesOnProduct", fields: [productId], references: [id])
+
+  @@index([productId])
+}
+
 model Product {
   id                Int             @id @default(autoincrement())
   createdAt         DateTime        @default(now())
@@ -61,6 +75,7 @@ model Product {
   featureTextDetails String         @db.Text  @default("")
   images            ProductImage?  @relation("ProductImagesOnProduct")
   categoryImages    CategoryImage?  @relation("CategoryImagesOnProduct")
+  productGalleryImages GalleryImage[] @relation("GalleryImagesOnProduct")
   accessories       ProductAccessory[]
   cartItems         CartItem[]
 }
