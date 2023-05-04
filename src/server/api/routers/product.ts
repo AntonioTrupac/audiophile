@@ -82,17 +82,17 @@ export const productRouter = createTRPCRouter({
           slug: input.slug,
         },
         include: {
-          categoryImages: {
-            include: {
-              imageSizes: true,
-            },
-          },
           accessories: {
             include: {
               accessory: true,
             },
           },
           images: {
+            include: {
+              imageSizes: true,
+            },
+          },
+          productGalleryImages: {
             include: {
               imageSizes: true,
             },

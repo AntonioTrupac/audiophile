@@ -13,6 +13,8 @@ import FeatureSection from "~/components/sections/FeatureSection";
 const Headphone: NextPage<{ slug: string }> = ({ slug }) => {
   const { data, isLoading } = api.product.getBySlug.useQuery({ slug });
 
+  console.log(data);
+
   if (isLoading)
     return (
       <div className="flex h-screen w-full items-center justify-center">
