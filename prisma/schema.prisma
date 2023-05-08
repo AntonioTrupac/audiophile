@@ -62,22 +62,34 @@ model GalleryImage {
 }
 
 model Product {
-  id                Int             @id @default(autoincrement())
-  createdAt         DateTime        @default(now())
-  updatedAt         DateTime        @updatedAt
-  slug              String          @unique
-  name              String
-  category          String
-  new               Boolean         @default(false)
-  price             Int
-  description       String          @db.Text
-  featureTextOverview String        @db.Text @default("")
-  featureTextDetails String         @db.Text  @default("")
-  images            ProductImage?  @relation("ProductImagesOnProduct")
-  categoryImages    CategoryImage?  @relation("CategoryImagesOnProduct")
-  productGalleryImages GalleryImage[] @relation("GalleryImagesOnProduct")
-  accessories       ProductAccessory[]
-  cartItems         CartItem[]
+  id                    Int                 @id @default(autoincrement())
+  createdAt             DateTime            @default(now())
+  updatedAt             DateTime            @updatedAt
+  slug                  String              @unique
+  name                  String
+  category              String
+  new                   Boolean             @default(false)
+  price                 Int
+  description           String              @db.Text
+  featureTextOverview   String              @db.Text @default("")
+  featureTextDetails    String              @db.Text  @default("")
+  images                ProductImage?       @relation("ProductImagesOnProduct")
+  categoryImages        CategoryImage?      @relation("CategoryImagesOnProduct")
+  productGalleryImages  GalleryImage[]      @relation("GalleryImagesOnProduct")
+  suggestedProducts     SuggestedProduct[]  @relation("ProductToSuggestedProduct")
+  suggestedByProducts   SuggestedProduct[]  @relation("SuggestedToProduct")
+  accessories           ProductAccessory[]
+  cartItems             CartItem[]
+}
+
+model SuggestedProduct {
+  id                 Int      @id @default(autoincrement())
+  productId          Int
+  product            Product  @relation("ProductToSuggestedProduct", fields: [productId], references: [id])
+  suggestedProductId Int
+  suggestedProduct   Product  @relation("SuggestedToProduct", fields: [suggestedProductId], references: [id])
+
+  @@index([productId, suggestedProductId])
 }
 
 model Accessory {

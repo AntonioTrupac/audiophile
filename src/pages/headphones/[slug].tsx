@@ -2,6 +2,7 @@ import { api } from "~/utils/api";
 import {
   BestGearSection,
   CategoryList,
+  GallerySection,
   LoadingSpinner,
   ProductSection,
 } from "~/components";
@@ -45,6 +46,7 @@ const Headphone: NextPage<{ slug: string }> = ({ slug }) => {
           featureTextOverview={data.featureTextOverview}
           accessories={data.accessories}
         />
+        <GallerySection galleryImages={data.productGalleryImages} />
         <CategoryList className="pt-10 pb-0" />
         <BestGearSection className="my-[120px] lg:my-[160px]" />
       </div>

@@ -97,6 +97,21 @@ export const productRouter = createTRPCRouter({
               imageSizes: true,
             },
           },
+          suggestedProducts: {
+            include: {
+              product: {
+                select: {
+                  id: true,
+                  images: {
+                    include: {
+                      imageSizes: true,
+                    },
+                  },
+                  name: true,
+                },
+              },
+            },
+          },
         },
       });
 
