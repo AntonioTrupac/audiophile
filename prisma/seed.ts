@@ -51,6 +51,7 @@ async function main() {
   const sp = await prisma.suggestedProduct.createMany({
     data: suggestedProducts,
   });
+  console.log("Created records in suggestedProduct table");
 
   const a = await prisma.accessory.createMany({
     data: accessory,
