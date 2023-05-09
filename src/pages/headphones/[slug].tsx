@@ -5,6 +5,7 @@ import {
   GallerySection,
   LoadingSpinner,
   ProductSection,
+  SuggestedProductsSection,
 } from "~/components";
 import { type GetStaticProps, type NextPage } from "next";
 import { generateSSGHelper } from "~/server/helpers/ssgHelper";
@@ -13,8 +14,6 @@ import FeatureSection from "~/components/sections/FeatureSection";
 
 const Headphone: NextPage<{ slug: string }> = ({ slug }) => {
   const { data, isLoading } = api.product.getBySlug.useQuery({ slug });
-
-  console.log(data);
 
   if (isLoading)
     return (
@@ -47,6 +46,7 @@ const Headphone: NextPage<{ slug: string }> = ({ slug }) => {
           accessories={data.accessories}
         />
         <GallerySection galleryImages={data.productGalleryImages} />
+        <SuggestedProductsSection suggestedProducts={data.suggestedProducts} />
         <CategoryList className="pt-10 pb-0" />
         <BestGearSection className="my-[120px] lg:my-[160px]" />
       </div>

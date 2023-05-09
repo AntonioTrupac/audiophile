@@ -121,4 +121,14 @@ export const imageSizes = [
       "https://res.cloudinary.com/dg93gnfxf/image/upload/v1683117408/audiophile/Product%20Images%20for%20audiophile/gallery/headphones%20mark%202/image-gallery-3_svpxoe.jpg",
     galleryImageId: 3,
   },
+  {
+    id: 13,
+    mobileURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1683651062/audiophile/Product%20Images%20for%20audiophile/zx-9%20speaker/image-product_m7jyfn.jpg",
+    tabletURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1683651052/audiophile/Product%20Images%20for%20audiophile/zx-9%20speaker/image-product_n7xmrm.jpg",
+    desktopURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1683651048/audiophile/Product%20Images%20for%20audiophile/zx-9%20speaker/image-product_y9q86x.jpg",
+    productImageId: 4,
+  },
 ];

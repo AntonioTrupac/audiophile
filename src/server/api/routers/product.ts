@@ -97,7 +97,7 @@ export const productRouter = createTRPCRouter({
           },
           suggestedProducts: {
             include: {
-              product: {
+              suggestedProduct: {
                 select: {
                   id: true,
                   images: {
