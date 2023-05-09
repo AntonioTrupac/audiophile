@@ -19,7 +19,7 @@ export const productRouter = createTRPCRouter({
     .mutation(async ({ ctx, input }) => {
       const userId = ctx.currentUser.id;
 
-      const createdOrder = await ctx.prisma.cart.create({
+      return await ctx.prisma.cart.create({
         data: {
           userId: Number(userId),
           // productId: input.productId,
@@ -35,8 +35,6 @@ export const productRouter = createTRPCRouter({
           updatedAt: new Date(),
         },
       });
-
-      return createdOrder;
     }),
 
   getAll: publicProcedure.query(({ ctx }) => {
