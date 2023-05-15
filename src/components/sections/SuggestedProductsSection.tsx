@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Button, LinkButton } from "../buttons";
 
 type ImageSize = {
   id: number;
@@ -18,34 +19,49 @@ type SuggestedProduct = {
   };
 };
 
+function removeProductType(productName: string): string {
+  return productName.replace(/\s*(headphones|earphones)\s*/gi, " ").trim();
+}
+
 const SuggestedProductsSection = ({
   suggestedProducts,
 }: {
   suggestedProducts: SuggestedProduct[];
 }) => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex w-full flex-col items-center md:mb-[120px] lg:mb-[160px]">
       <h2 className="mb-8 text-2xl font-bold">You may also like</h2>
 
-      <div className="flex gap-[1.875rem]">
+      <div className="flex w-full gap-[1.875rem]">
         {suggestedProducts.map((suggestedProduct) => {
           const product = suggestedProduct.suggestedProduct;
-          console.log(product);
+
+          const productName = removeProductType(product.name);
+
           return (
             <div
               key={suggestedProduct.id}
-              className="relative flex h-[318px] w-[350px]"
+              className="flex flex-grow flex-col items-center"
             >
-              {product.images?.imageSizes &&
-                product.images.imageSizes.map((image) => (
-                  <Image
-                    key={image.id}
-                    src={image.mobileURL}
-                    alt={product.name}
-                    fill
-                    className="rounded-md md:hidden lg:flex"
-                  />
-                ))}
+              <div className="relative flex aspect-[1.101] w-full">
+                {product.images?.imageSizes &&
+                  product.images.imageSizes.map((image) => (
+                    <Image
+                      key={image.id}
+                      src={image.mobileURL}
+                      alt={product.name}
+                      fill
+                    />
+                  ))}
+              </div>
+
+              <div>
+                <h3 className="mt-6 mb-2 text-xl font-bold">{productName}</h3>
+              </div>
+
+              <div className="mt-8">
+                <LinkButton href={`/`}>See product</LinkButton>
+              </div>
             </div>
           );
         })}
