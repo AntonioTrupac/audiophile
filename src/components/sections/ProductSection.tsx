@@ -1,12 +1,6 @@
 import Image from "next/image";
 import { Button, CounterButtons } from "~/components";
-
-type ProductImageSize = {
-  id: number;
-  desktopURL: string;
-  tabletURL: string;
-  mobileURL: string;
-};
+import type { ImageSize } from "./types";
 
 type ProductSection = {
   id: number;
@@ -16,7 +10,7 @@ type ProductSection = {
   slug: string;
   new: boolean;
   images: {
-    imageSizes: ProductImageSize[];
+    imageSizes: ImageSize[];
   } | null;
 };
 
@@ -25,7 +19,6 @@ interface ProductSectionProps {
 }
 
 const ProductSection = ({ product }: ProductSectionProps) => {
-  console.log(product);
   return (
     <section className="flex max-w-[1110px] flex-col gap-8 pb-[5.5rem] first:mt-0 md:flex-row md:gap-20 md:pb-[120px] md:first:mt-0 lg:gap-[125px] lg:pb-[160px]">
       {product.images?.imageSizes &&

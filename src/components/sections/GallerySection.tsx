@@ -1,11 +1,5 @@
 import Image from "next/image";
-
-type ImageSize = {
-  id: number;
-  desktopURL: string;
-  tabletURL: string;
-  mobileURL: string;
-};
+import type { ImageSize } from "./types";
 
 type GalleryImage = {
   id: number;

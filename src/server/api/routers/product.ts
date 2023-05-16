@@ -106,6 +106,8 @@ export const productRouter = createTRPCRouter({
                     },
                   },
                   name: true,
+                  category: true,
+                  slug: true,
                 },
               },
             },
