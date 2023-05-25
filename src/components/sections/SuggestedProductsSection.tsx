@@ -15,7 +15,7 @@ type SuggestedProduct = {
   };
 };
 
-function removeProductType(productName: string): string {
+function removeProductType(productName: string) {
   return productName.replace(/\s*(headphones|earphones)\s*/gi, " ").trim();
 }
 
@@ -47,20 +47,20 @@ const SuggestedProductItem = ({
 }: {
   suggestedProduct: SuggestedProduct;
 }) => {
-  const product = suggestedProduct.suggestedProduct;
-  const productName = removeProductType(product.name);
+  const { category, slug, images, name } = suggestedProduct.suggestedProduct;
+  const productName = removeProductType(name);
   return (
     <div
       key={suggestedProduct.id}
       className="flex flex-grow flex-col items-center"
     >
       <div className="relative flex aspect-square w-full lg:aspect-[1.101]">
-        {product.images?.imageSizes &&
-          product.images.imageSizes.map((image) => (
+        {images?.imageSizes &&
+          images.imageSizes.map((image) => (
             <Image
               key={image.id}
               src={image.mobileURL}
-              alt={product.name}
+              alt={name}
               className="rounded-lg"
               fill
             />
@@ -72,9 +72,7 @@ const SuggestedProductItem = ({
       </div>
 
       <div className="mt-8">
-        <LinkButton href={`${product.category}/${product.slug}`}>
-          See product
-        </LinkButton>
+        <LinkButton href={`${category}/${slug}`}>See product</LinkButton>
       </div>
     </div>
   );

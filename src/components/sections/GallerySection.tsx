@@ -25,6 +25,20 @@ const GalleryItem = ({
         fill
         className="rounded-md md:hidden lg:flex"
       />
+
+      <Image
+        src={imageSize.tabletURL}
+        alt="gallery"
+        fill
+        className="hidden rounded-md md:flex md:object-center lg:hidden"
+      />
+
+      <Image
+        src={imageSize.desktopURL}
+        alt="gallery"
+        fill
+        className="flex rounded-md md:hidden"
+      />
     </div>
   );
 };
@@ -34,8 +48,8 @@ const GallerySection = ({ galleryImages }: GalleryImagesProps) => {
   const others = galleryImages.slice(2);
 
   return (
-    <div className="mb-[160px] flex gap-[1.875rem]">
-      <div className="flex flex-col gap-8">
+    <div className="md;flex-row mb-[160px] flex flex-col gap-[1.875rem]">
+      <div className="flex w-full flex-col gap-8 lg:w-auto">
         {firstTwo.map((image) =>
           image.imageSizes.map((size) => (
             <GalleryItem
@@ -53,7 +67,7 @@ const GallerySection = ({ galleryImages }: GalleryImagesProps) => {
             <GalleryItem
               imageSize={size}
               key={size.id}
-              className="lg:aspect-auto lg:h-[592px]"
+              className="aspect-[1.07336957] h-full lg:aspect-auto lg:h-[592px]"
             />
           ))
         )}
