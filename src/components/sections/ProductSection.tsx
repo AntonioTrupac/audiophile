@@ -70,7 +70,12 @@ const ProductSection = ({ product }: ProductSectionProps) => {
             increment={() => console.log("DAD")}
             decrement={() => console.log("DAD")}
           />
-          <Button onClick={() => console.log("CLICK")}>add to cart</Button>
+          <Button
+            onClick={() => console.log("CLICK")}
+            className="flex-grow md:flex-grow-0"
+          >
+            add to cart
+          </Button>
         </div>
       </div>
     </section>
