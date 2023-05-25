@@ -25,7 +25,7 @@ const SuggestedProductsSection = ({
   suggestedProducts: SuggestedProduct[];
 }) => {
   return (
-    <div className="flex w-full flex-col items-center md:mb-[120px] lg:mb-[160px]">
+    <div className="mb-[120px] flex w-full flex-col items-center lg:mb-[160px]">
       <h2 className="mb-8 text-2xl font-bold">You may also like</h2>
 
       <div className="flex w-full flex-col gap-[1.875rem] md:flex-row">
@@ -68,7 +68,7 @@ const SuggestedProductItem = ({
       </div>
 
       <div>
-        <h3 className="mt-6 mb-2 text-xl font-bold">{productName}</h3>
+        <h3 className="mt-6 text-xl font-bold">{productName}</h3>
       </div>
 
       <div className="mt-8">

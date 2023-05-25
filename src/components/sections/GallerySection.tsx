@@ -48,7 +48,7 @@ const GallerySection = ({ galleryImages }: GalleryImagesProps) => {
   const others = galleryImages.slice(2);
 
   return (
-    <div className="md;flex-row mb-[160px] flex flex-col gap-[1.875rem]">
+    <div className="mb-[120px] flex flex-col gap-[1.875rem] md:flex-row lg:mb-[160px]">
       <div className="flex w-full flex-col gap-8 lg:w-auto">
         {firstTwo.map((image) =>
           image.imageSizes.map((size) => (
