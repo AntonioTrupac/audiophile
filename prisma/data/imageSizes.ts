@@ -131,4 +131,34 @@ export const imageSizes = [
       "https://res.cloudinary.com/dg93gnfxf/image/upload/v1683651048/audiophile/Product%20Images%20for%20audiophile/zx-9%20speaker/image-product_y9q86x.jpg",
     productImageId: 4,
   },
+  {
+    id: 14,
+    mobileURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685132164/audiophile/Product%20Images%20for%20audiophile/gallery/headphones%20mark%201/image-gallery-1_d9zjgx.jpg",
+    tabletURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685132159/audiophile/Product%20Images%20for%20audiophile/gallery/headphones%20mark%201/image-gallery-1_pj5303.jpg",
+    desktopURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685132153/audiophile/Product%20Images%20for%20audiophile/gallery/headphones%20mark%201/image-gallery-1_abpcf2.jpg",
+    galleryImageId: 4,
+  },
+  {
+    id: 15,
+    mobileURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685132164/audiophile/Product%20Images%20for%20audiophile/gallery/headphones%20mark%201/image-gallery-2_wwzza9.jpg",
+    tabletURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685132159/audiophile/Product%20Images%20for%20audiophile/gallery/headphones%20mark%201/image-gallery-2_nroau2.jpg",
+    desktopURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685132153/audiophile/Product%20Images%20for%20audiophile/gallery/headphones%20mark%201/image-gallery-2_dac9i9.jpg",
+    galleryImageId: 5,
+  },
+  {
+    id: 16,
+    mobileURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685132164/audiophile/Product%20Images%20for%20audiophile/gallery/headphones%20mark%201/image-gallery-3_suelai.jpg",
+    tabletURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685132159/audiophile/Product%20Images%20for%20audiophile/gallery/headphones%20mark%201/image-gallery-3_wjina5.jpg",
+    desktopURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685132153/audiophile/Product%20Images%20for%20audiophile/gallery/headphones%20mark%201/image-gallery-3_ajcyta.jpg",
+    galleryImageId: 6,
+  },
 ];

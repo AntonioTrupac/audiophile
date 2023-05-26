@@ -83,4 +83,24 @@ export const productAccessories = [
     accessoryId: 5,
     quantity: 1,
   },
+  {
+    productId: 2,
+    accessoryId: 1,
+    quantity: 1,
+  },
+  {
+    productId: 2,
+    accessoryId: 2,
+    quantity: 2,
+  },
+  {
+    productId: 2,
+    accessoryId: 3,
+    quantity: 1,
+  },
+  {
+    productId: 2,
+    accessoryId: 4,
+    quantity: 1,
+  },
 ];
