@@ -161,4 +161,34 @@ export const imageSizes = [
       "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685132153/audiophile/Product%20Images%20for%20audiophile/gallery/headphones%20mark%201/image-gallery-3_ajcyta.jpg",
     galleryImageId: 6,
   },
+  {
+    id: 17,
+    mobileURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685132608/audiophile/Product%20Images%20for%20audiophile/gallery/hedaphones%20xx59/image-gallery-1_b84ku0.jpg",
+    tabletURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685132604/audiophile/Product%20Images%20for%20audiophile/gallery/hedaphones%20xx59/image-gallery-1_bitpty.jpg",
+    desktopURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685132599/audiophile/Product%20Images%20for%20audiophile/gallery/hedaphones%20xx59/image-gallery-1_xbrgeu.jpg",
+    galleryImageId: 7,
+  },
+  {
+    id: 18,
+    mobileURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685132608/audiophile/Product%20Images%20for%20audiophile/gallery/hedaphones%20xx59/image-gallery-2_qxyb9o.jpg",
+    tabletURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685132604/audiophile/Product%20Images%20for%20audiophile/gallery/hedaphones%20xx59/image-gallery-2_cstyf5.jpg",
+    desktopURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685132599/audiophile/Product%20Images%20for%20audiophile/gallery/hedaphones%20xx59/image-gallery-2_hupezy.jpg",
+    galleryImageId: 8,
+  },
+  {
+    id: 19,
+    mobileURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685132608/audiophile/Product%20Images%20for%20audiophile/gallery/hedaphones%20xx59/image-gallery-3_cn43mk.jpg",
+    tabletURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685132604/audiophile/Product%20Images%20for%20audiophile/gallery/hedaphones%20xx59/image-gallery-3_rjc7fe.jpg",
+    desktopURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685132599/audiophile/Product%20Images%20for%20audiophile/gallery/hedaphones%20xx59/image-gallery-3_xjgqek.jpg",
+    galleryImageId: 9,
+  },
 ];

@@ -103,4 +103,24 @@ export const productAccessories = [
     accessoryId: 4,
     quantity: 1,
   },
+  {
+    productId: 3,
+    accessoryId: 1,
+    quantity: 1,
+  },
+  {
+    productId: 3,
+    accessoryId: 2,
+    quantity: 2,
+  },
+  {
+    productId: 3,
+    accessoryId: 3,
+    quantity: 1,
+  },
+  {
+    productId: 3,
+    accessoryId: 4,
+    quantity: 1,
+  },
 ];

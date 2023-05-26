@@ -23,4 +23,16 @@ export const suggestedProducts = [
     productId: 2,
     suggestedProductId: 4,
   },
+  {
+    productId: 3,
+    suggestedProductId: 1,
+  },
+  {
+    productId: 3,
+    suggestedProductId: 2,
+  },
+  {
+    productId: 3,
+    suggestedProductId: 4,
+  },
 ];
