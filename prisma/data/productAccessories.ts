@@ -37,7 +37,7 @@ export const accessory = [
   },
   {
     id: 10,
-    name: "7.5m Optical Cable",
+    name: "3.5mm 7.5m Audio Cable",
   },
   {
     id: 11,
@@ -54,6 +54,14 @@ export const accessory = [
   {
     id: 14,
     name: "Earphone Unit",
+  },
+  {
+    id: 15,
+    name: "Speaker Unit",
+  },
+  {
+    id: 16,
+    name: "7.5m Optical Cable",
   },
 ];
 
@@ -121,6 +129,56 @@ export const productAccessories = [
   {
     productId: 3,
     accessoryId: 4,
+    quantity: 1,
+  },
+  {
+    productId: 4,
+    accessoryId: 15,
+    quantity: 2,
+  },
+  {
+    productId: 4,
+    accessoryId: 9,
+    quantity: 2,
+  },
+  {
+    productId: 4,
+    accessoryId: 3,
+    quantity: 1,
+  },
+  {
+    productId: 4,
+    accessoryId: 8,
+    quantity: 1,
+  },
+  {
+    productId: 4,
+    accessoryId: 7,
+    quantity: 1,
+  },
+  {
+    productId: 5,
+    accessoryId: 15,
+    quantity: 2,
+  },
+  {
+    productId: 5,
+    accessoryId: 9,
+    quantity: 2,
+  },
+  {
+    productId: 5,
+    accessoryId: 3,
+    quantity: 1,
+  },
+  {
+    productId: 5,
+    accessoryId: 10,
+    quantity: 1,
+  },
+  {
+    productId: 5,
+    accessoryId: 16,
     quantity: 1,
   },
 ];

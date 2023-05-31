@@ -191,4 +191,74 @@ export const imageSizes = [
       "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685132599/audiophile/Product%20Images%20for%20audiophile/gallery/hedaphones%20xx59/image-gallery-3_xjgqek.jpg",
     galleryImageId: 9,
   },
+  {
+    id: 20,
+    mobileURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685560881/audiophile/Product%20Images%20for%20audiophile/gallery/zx9speaker/image-gallery-1_pxj9rr.jpg",
+    tabletURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685560876/audiophile/Product%20Images%20for%20audiophile/gallery/zx9speaker/image-gallery-1_wn5b5l.jpg",
+    desktopURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685560872/audiophile/Product%20Images%20for%20audiophile/gallery/zx9speaker/image-gallery-1_leq2vl.jpg",
+    galleryImageId: 10,
+  },
+  {
+    id: 21,
+    mobileURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685560881/audiophile/Product%20Images%20for%20audiophile/gallery/zx9speaker/image-gallery-2_jtssh1.jpg",
+    tabletURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685560876/audiophile/Product%20Images%20for%20audiophile/gallery/zx9speaker/image-gallery-2_utgvp5.jpg",
+    desktopURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685560871/audiophile/Product%20Images%20for%20audiophile/gallery/zx9speaker/image-gallery-2_dfcdze.jpg",
+    galleryImageId: 11,
+  },
+  {
+    id: 22,
+    mobileURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685560881/audiophile/Product%20Images%20for%20audiophile/gallery/zx9speaker/image-gallery-3_jliema.jpg",
+    tabletURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685560876/audiophile/Product%20Images%20for%20audiophile/gallery/zx9speaker/image-gallery-3_wmdr6b.jpg",
+    desktopURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685560872/audiophile/Product%20Images%20for%20audiophile/gallery/zx9speaker/image-gallery-3_s90xbd.jpg",
+    galleryImageId: 12,
+  },
+  {
+    id: 23,
+    mobileURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685561290/audiophile/Product%20Images%20for%20audiophile/image-product_quwy3w.jpg",
+    tabletURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685561260/audiophile/Product%20Images%20for%20audiophile/image-product_ovri8m.jpg",
+    desktopURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685561235/audiophile/Product%20Images%20for%20audiophile/image-product_xzcql6.jpg",
+    productImageId: 5,
+  },
+  {
+    id: 24,
+    mobileURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685561665/audiophile/Product%20Images%20for%20audiophile/gallery/zx7speaker/image-gallery-1_zek24e.jpg",
+    tabletURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685561657/audiophile/Product%20Images%20for%20audiophile/gallery/zx7speaker/image-gallery-1_zoeqno.jpg",
+    desktopURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685561653/audiophile/Product%20Images%20for%20audiophile/gallery/zx7speaker/image-gallery-1_hztkd7.jpg",
+    galleryImageId: 13,
+  },
+  {
+    id: 25,
+    mobileURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685561665/audiophile/Product%20Images%20for%20audiophile/gallery/zx7speaker/image-gallery-2_wvucbs.jpg",
+    tabletURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685561657/audiophile/Product%20Images%20for%20audiophile/gallery/zx7speaker/image-gallery-2_gh3wia.jpg",
+    desktopURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685561653/audiophile/Product%20Images%20for%20audiophile/gallery/zx7speaker/image-gallery-2_dyhbmc.jpg",
+    galleryImageId: 14,
+  },
+  {
+    id: 26,
+    mobileURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685561665/audiophile/Product%20Images%20for%20audiophile/gallery/zx7speaker/image-gallery-3_ulvei6.jpg",
+    tabletURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685561657/audiophile/Product%20Images%20for%20audiophile/gallery/zx7speaker/image-gallery-3_p0x7nd.jpg",
+    desktopURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685561653/audiophile/Product%20Images%20for%20audiophile/gallery/zx7speaker/image-gallery-3_fci4fr.jpg",
+    galleryImageId: 15,
+  },
 ];

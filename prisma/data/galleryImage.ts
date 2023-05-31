@@ -35,4 +35,28 @@ export const galleryImage = [
     id: 9,
     productId: 3,
   },
+  {
+    id: 10,
+    productId: 4,
+  },
+  {
+    id: 11,
+    productId: 4,
+  },
+  {
+    id: 12,
+    productId: 4,
+  },
+  {
+    id: 13,
+    productId: 5,
+  },
+  {
+    id: 14,
+    productId: 5,
+  },
+  {
+    id: 15,
+    productId: 5,
+  },
 ];

@@ -15,4 +15,8 @@ export const productImage = [
     id: 4,
     productId: 4,
   },
+  {
+    id: 5,
+    productId: 5,
+  },
 ];
