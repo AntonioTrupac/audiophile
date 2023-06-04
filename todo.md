@@ -8,6 +8,9 @@
 - [ ] Connect stripe checkout with commerce
 - [x] refactor navigation so that the bottom white line is not seen on [...slug] pages
 - [ ] link in category section should be /[category]/[slug] and not hardcoded value of /headphones/[slug]
+- [ ] error handling if(!data) should be done in all pages and should throw an error page or redirect to 404 page
+- [ ] add a 404 page / style already existing 404 page
+- [ ] go back should be made into a link button component since its used in multiple pages
 
 ## Checkout page
 - [ ] create inputs

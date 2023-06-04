@@ -1,12 +1,7 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { LinkButton } from "~/components";
-
-type ProductImageSize = {
-  id: number;
-  desktopURL: string;
-  tabletURL: string;
-  mobileURL: string;
-};
+import { type ImageSize } from "./types";
 
 type ProductWithCategoryImages = {
   id: number;
@@ -16,7 +11,7 @@ type ProductWithCategoryImages = {
   slug: string;
   new: boolean;
   categoryImages: {
-    imageSizes: ProductImageSize[];
+    imageSizes: ImageSize[];
   } | null;
 };
 
@@ -26,6 +21,9 @@ interface CategorySectionProps {
 }
 
 const CategorySection = ({ product, isContentLeft }: CategorySectionProps) => {
+  const router = useRouter();
+  console.log(product.slug);
+  console.log("ROUTER", router);
   return (
     <section
       className={`mt-20 flex max-w-[1110px] flex-col gap-8 first:mt-0 md:mt-[120px] md:gap-14 md:first:mt-0 lg:mt-[160px] lg:flex-row lg:gap-[125px] ${
@@ -73,7 +71,7 @@ const CategorySection = ({ product, isContentLeft }: CategorySectionProps) => {
 
         <LinkButton
           className="self-center lg:self-start"
-          href={`/headphones/${product.slug}`}
+          href={`${router.route}/${product.slug}`}
         >
           See product
         </LinkButton>

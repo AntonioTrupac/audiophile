@@ -12,7 +12,7 @@ import { type GetStaticProps, type NextPage } from "next";
 import { generateSSGHelper } from "~/server/helpers/ssgHelper";
 import Link from "next/link";
 
-const Headphone: NextPage<{ slug: string }> = ({ slug }) => {
+const Speakers: NextPage<{ slug: string }> = ({ slug }) => {
   const { data, isLoading } = api.product.getBySlug.useQuery({ slug });
 
   if (isLoading)
@@ -31,7 +31,7 @@ const Headphone: NextPage<{ slug: string }> = ({ slug }) => {
 
       <div className="mt-4 flex w-full max-w-[1110px] px-6 md:mt-8 md:px-10 lg:mt-20 lg:px-8 xl:px-0">
         <Link
-          href="/headphones"
+          href="/speakers"
           className="capitalize text-black/50 hover:text-black/40"
         >
           Go back
@@ -75,4 +75,4 @@ export const getStaticPaths = () => {
   return { paths: [], fallback: "blocking" };
 };
 
-export default Headphone;
+export default Speakers;
