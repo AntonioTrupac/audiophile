@@ -4,9 +4,11 @@ import Link from "next/link";
 import MobileNavigation from "~/components/layout/MobileNavigation";
 import { useState } from "react";
 import Menu from "~/components/icons/Menu";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   const onClose = () => setIsOpen(false);
 
@@ -24,8 +26,7 @@ const Navbar = () => {
         </div>
 
         {/* Navigation */}
-
-        <nav className="">
+        <nav>
           <ul className="hidden gap-[2.125rem] lg:flex">
             <li>
               <Link href="/" className="hover:text-primary">
@@ -64,19 +65,23 @@ const Navbar = () => {
           <button className="" type="button" onClick={() => setIsOpen(!isOpen)}>
             <Menu />
           </button>
+
           <Image
             src="/assets/shared/desktop/logo.svg"
             alt="logo"
             width={143}
             height={25}
           />
+
           <button onClick={() => console.log("Clicked")}>
             <Cart className="text-white" />
           </button>
         </div>
       </div>
 
-      <div className="mt-9 h-[1px] w-full bg-white/20 lg:max-w-[1110px]" />
+      {!router.query.slug && (
+        <div className="mt-9 h-[1px] w-full bg-white/20 lg:max-w-[1110px]" />
+      )}
     </header>
   );
 };
