@@ -261,4 +261,44 @@ export const imageSizes = [
       "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685561653/audiophile/Product%20Images%20for%20audiophile/gallery/zx7speaker/image-gallery-3_fci4fr.jpg",
     galleryImageId: 15,
   },
+  {
+    id: 27,
+    mobileURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685798930/audiophile/Product%20Images%20for%20audiophile/image-product_o4wvlj.jpg",
+    tabletURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685798927/audiophile/Product%20Images%20for%20audiophile/image-product_kuykho.jpg",
+    desktopURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685798923/audiophile/Product%20Images%20for%20audiophile/image-product_yfpsbl.jpg",
+    productImageId: 6,
+  },
+  {
+    id: 28,
+    mobileURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685799511/audiophile/Product%20Images%20for%20audiophile/gallery/earphones/image-gallery-1_qvrkkp.jpg",
+    tabletURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685799507/audiophile/Product%20Images%20for%20audiophile/gallery/earphones/image-gallery-1_ibblvv.jpg",
+    desktopURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685799504/audiophile/Product%20Images%20for%20audiophile/gallery/earphones/image-gallery-1_ibfmj1.jpg",
+    galleryImageId: 16,
+  },
+  {
+    id: 29,
+    mobileURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685799511/audiophile/Product%20Images%20for%20audiophile/gallery/earphones/image-gallery-2_dlos0f.jpg",
+    tabletURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685799507/audiophile/Product%20Images%20for%20audiophile/gallery/earphones/image-gallery-2_suxnvr.jpg",
+    desktopURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685799504/audiophile/Product%20Images%20for%20audiophile/gallery/earphones/image-gallery-2_xlucys.jpg",
+    galleryImageId: 17,
+  },
+  {
+    id: 30,
+    mobileURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685799511/audiophile/Product%20Images%20for%20audiophile/gallery/earphones/image-gallery-3_yp4pqy.jpg",
+    tabletURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685799507/audiophile/Product%20Images%20for%20audiophile/gallery/earphones/image-gallery-3_th3ry5.jpg",
+    desktopURL:
+      "https://res.cloudinary.com/dg93gnfxf/image/upload/v1685799504/audiophile/Product%20Images%20for%20audiophile/gallery/earphones/image-gallery-3_gli1wi.jpg",
+    galleryImageId: 18,
+  },
 ];

@@ -181,4 +181,29 @@ export const productAccessories = [
     accessoryId: 16,
     quantity: 1,
   },
+  {
+    productId: 6,
+    accessoryId: 14,
+    quantity: 2,
+  },
+  {
+    productId: 6,
+    accessoryId: 13,
+    quantity: 6,
+  },
+  {
+    productId: 6,
+    accessoryId: 3,
+    quantity: 1,
+  },
+  {
+    productId: 6,
+    accessoryId: 12,
+    quantity: 1,
+  },
+  {
+    productId: 6,
+    accessoryId: 11,
+    quantity: 1,
+  },
 ];
