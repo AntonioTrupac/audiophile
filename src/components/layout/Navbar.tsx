@@ -13,7 +13,7 @@ const Navbar = () => {
   const onClose = () => setIsOpen(false);
 
   return (
-    <header className="absolute top-6 left-0 z-[9999] flex w-full flex-col items-center justify-center px-10 lg:left-1/2 lg:-translate-x-1/2 lg:transform">
+    <header className="absolute top-8 left-0 z-[9999] flex w-full flex-col items-center justify-center px-10 lg:left-1/2 lg:-translate-x-1/2 lg:transform">
       <div className="grid w-full max-w-[1110px] grid-cols-navigation-mobile items-center md:grid-cols-navigation lg:items-start lg:px-0">
         {/* Logo for lg: screens */}
         <div className="col-span-1 hidden items-center justify-start lg:flex">

@@ -7,6 +7,7 @@
 - [ ] Create a checkout page
 - [ ] Connect stripe checkout with commerce
 - [x] refactor navigation so that the bottom white line is not seen on [...slug] pages
+- [ ] link in category section should be /[category]/[slug] and not hardcoded value of /headphones/[slug]
 
 ## Checkout page
 - [ ] create inputs
