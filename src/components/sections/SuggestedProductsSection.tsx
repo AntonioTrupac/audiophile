@@ -72,7 +72,7 @@ const SuggestedProductItem = ({
       </div>
 
       <div className="mt-8">
-        <LinkButton href={`${category}/${slug}`}>See product</LinkButton>
+        <LinkButton href={`/${category}/${slug}`}>See product</LinkButton>
       </div>
     </div>
   );

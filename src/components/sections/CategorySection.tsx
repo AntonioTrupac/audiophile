@@ -22,8 +22,7 @@ interface CategorySectionProps {
 
 const CategorySection = ({ product, isContentLeft }: CategorySectionProps) => {
   const router = useRouter();
-  console.log(product.slug);
-  console.log("ROUTER", router);
+
   return (
     <section
       className={`mt-20 flex max-w-[1110px] flex-col gap-8 first:mt-0 md:mt-[120px] md:gap-14 md:first:mt-0 lg:mt-[160px] lg:flex-row lg:gap-[125px] ${
