@@ -2,12 +2,19 @@ import Cart from "~/components/icons/Cart";
 import Image from "next/image";
 import Link from "next/link";
 import MobileNavigation from "~/components/layout/MobileNavigation";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Menu from "~/components/icons/Menu";
 import { useRouter } from "next/router";
 
+import { usePopoverStore } from "~/store/popover";
+import Popover from "~/components/popover/Popover";
+
 const Navbar = () => {
+  const popoverStore = usePopoverStore();
   const [isOpen, setIsOpen] = useState(false);
+  const cartLargeButtonRef = useRef<HTMLButtonElement>(null);
+  const cartSmallButtonRef = useRef<HTMLButtonElement>(null);
+  const cartRefPopover = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
   const onClose = () => setIsOpen(false);
@@ -55,7 +62,12 @@ const Navbar = () => {
 
         {/* Cart Button for lg: screens */}
         <div className="col-span-1 hidden items-center justify-end lg:flex ">
-          <button onClick={() => console.log("Clicked")}>
+          <button
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            onClick={() => popoverStore.open()}
+            data-cart-button="large"
+            ref={cartLargeButtonRef}
+          >
             <Cart className="text-white" />
           </button>
         </div>
@@ -73,10 +85,17 @@ const Navbar = () => {
             height={25}
           />
 
-          <button onClick={() => console.log("Clicked")}>
+          <button
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            onClick={() => popoverStore.open()}
+            data-cart-button="small"
+            ref={cartSmallButtonRef}
+          >
             <Cart className="text-white" />
           </button>
         </div>
+
+        {popoverStore.isOpen && <Popover ref={cartRefPopover} />}
       </div>
 
       {!router.query.slug && (
