@@ -7,7 +7,7 @@
 - [ ] Create a checkout page
 - [ ] Connect stripe checkout with commerce
 - [x] refactor navigation so that the bottom white line is not seen on [...slug] pages
-- [ ] link in category section should be /[category]/[slug] and not hardcoded value of /headphones/[slug]
+- [x] link in category section should be /[category]/[slug] and not hardcoded value of /headphones/[slug]
 - [ ] error handling if(!data) should be done in all pages and should throw an error page or redirect to 404 page
 - [ ] add a 404 page / style already existing 404 page
 - [ ] go back should be made into a link button component since its used in multiple pages
@@ -16,3 +16,7 @@
 - [ ] create inputs
 - [ ] use react-hook-form
 - [ ] only able to checkout if logged in - auth check needed only here
+
+## Refactoring
+- [ ] refactor Popover component to make it more generic
+- [x] refactor useSetPosition and separate it into hook files so it can be used by other components as well

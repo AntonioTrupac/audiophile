@@ -38,6 +38,7 @@ export const useCartStore = create<CartState>((set) => ({
       });
 
       if (!itemFound) {
+        console.error("Item not found");
         items.push({ ...item, total: item.price * item.quantity });
       }
 
