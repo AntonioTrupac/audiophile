@@ -15,8 +15,12 @@
 ## Checkout page
 - [ ] create inputs
 - [ ] use react-hook-form
-- [ ] only able to checkout if logged in - auth check needed only here
+- [ ] only able to check out if logged in - auth check needed only here
 
 ## Refactoring
 - [ ] refactor Popover component to make it more generic
 - [x] refactor useSetPosition and separate it into hook files so it can be used by other components as well
+
+## Cart and Cart Store
+- [ ] should add localStorage or maybe via cookies to store cart items even if the browser is refreshed or closed
+- [ ] the one above needs to be handled via zustand store, there is probably a way to persist items on refresh with zustand

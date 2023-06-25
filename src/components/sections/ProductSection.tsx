@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Button, CounterButtons } from "~/components";
 import type { ImageSize } from "./types";
+import { useItemCount } from "~/hooks";
 
 type ProductSection = {
   id: number;
@@ -19,6 +20,15 @@ interface ProductSectionProps {
 }
 
 const ProductSection = ({ product }: ProductSectionProps) => {
+  const cartItem = {
+    id: product.id,
+    name: product.name,
+    price: product.price,
+  };
+
+  const { count, handleIncrement, handleDecrement, handleCart } =
+    useItemCount(cartItem);
+
   return (
     <section className="flex max-w-[1110px] flex-col gap-8 pb-[5.5rem] first:mt-0 md:flex-row md:gap-20 md:pb-[120px] md:first:mt-0 lg:gap-[125px] lg:pb-[160px]">
       {product.images?.imageSizes &&
@@ -66,14 +76,11 @@ const ProductSection = ({ product }: ProductSectionProps) => {
 
         <div className="flex gap-4">
           <CounterButtons
-            count={1}
-            increment={() => console.log("DAD")}
-            decrement={() => console.log("DAD")}
+            count={count}
+            increment={handleIncrement}
+            decrement={handleDecrement}
           />
-          <Button
-            onClick={() => console.log("CLICK")}
-            className="flex-grow md:flex-grow-0"
-          >
+          <Button onClick={handleCart} className="flex-grow md:flex-grow-0">
             add to cart
           </Button>
         </div>

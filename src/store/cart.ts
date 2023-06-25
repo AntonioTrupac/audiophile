@@ -1,54 +1,44 @@
 import { create } from "zustand";
 
 export type CartItem = {
-  id: string;
+  id: number;
   name: string;
   price: number;
-  total: number;
+  subTotal: number;
   quantity: number;
 };
 
 type CartState = {
   items: CartItem[];
-  total: number;
+  cartTotal: number;
   quantity: number;
   addItem: (item: CartItem) => void;
-  removeItem: (id: string) => void;
+  removeItem: (id: number) => void;
   clearCart: () => void;
 };
 
 export const useCartStore = create<CartState>((set) => ({
   items: [],
-  total: 0,
+  cartTotal: 0,
   quantity: 0,
   addItem: (item) => {
     set((state) => {
-      let itemFound = false;
+      const items = [...state.items];
+      const itemInCart = items.find((i) => i.id === item.id);
 
-      const items = state.items.map((itemInCart) => {
-        if (itemInCart.id === item.id) {
-          itemFound = true;
-          return {
-            ...itemInCart,
-            quantity: itemInCart.quantity + item.quantity,
-            total: itemInCart.total + item.price * item.quantity,
-          };
-        }
-        return itemInCart;
-      });
-
-      if (!itemFound) {
-        console.error("Item not found");
-        items.push({ ...item, total: item.price * item.quantity });
+      if (itemInCart) {
+        itemInCart.quantity += item.quantity;
+        itemInCart.subTotal += item.price * item.quantity;
+      } else {
+        items.push(item);
       }
 
-      const total = items.reduce((sum, item) => sum + item.total, 0);
       const quantity = items.reduce((sum, item) => sum + item.quantity, 0);
 
       return {
         items,
         quantity,
-        total,
+        cartTotal: state.cartTotal + item.subTotal,
       };
     });
   },
@@ -71,7 +61,7 @@ export const useCartStore = create<CartState>((set) => ({
         return {
           items,
           quantity: state.quantity - item.quantity,
-          total: state.total - item.total, // subtract item's total (price * quantity)
+          cartTotal: state.cartTotal - item.subTotal,
         };
       }
 
@@ -81,7 +71,7 @@ export const useCartStore = create<CartState>((set) => ({
   clearCart: () => {
     set(() => ({
       items: [],
-      total: 0,
+      cartTotal: 0,
       quantity: 0,
     }));
   },
