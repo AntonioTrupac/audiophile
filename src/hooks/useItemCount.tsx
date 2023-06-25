@@ -5,14 +5,6 @@ interface Item {
   id: number;
   name: string;
   price: number;
-  quantity?: number;
-  total?: number;
-}
-
-interface Item {
-  id: number;
-  name: string;
-  price: number;
 }
 
 interface CartItem extends Item {
