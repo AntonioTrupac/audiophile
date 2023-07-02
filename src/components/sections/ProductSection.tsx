@@ -24,6 +24,7 @@ const ProductSection = ({ product }: ProductSectionProps) => {
     id: product.id,
     name: product.name,
     price: product.price,
+    imageUrl: product.images?.imageSizes[0]?.mobileURL || "",
   };
 
   const { count, handleIncrement, handleDecrement, handleCart } =

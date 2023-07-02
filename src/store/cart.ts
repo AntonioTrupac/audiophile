@@ -6,6 +6,7 @@ export type CartItem = {
   price: number;
   subTotal: number;
   quantity: number;
+  imageUrl: string;
 };
 
 type CartState = {

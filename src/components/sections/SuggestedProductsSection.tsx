@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { LinkButton } from "../buttons";
 import type { ImageSize } from "./types";
+import { trimProductName } from "~/utils/helpers";
 
 type SuggestedProduct = {
   id: number;
@@ -14,10 +15,6 @@ type SuggestedProduct = {
     slug: string;
   };
 };
-
-function removeProductType(productName: string) {
-  return productName.replace(/\s*(headphones|earphones)\s*/gi, " ").trim();
-}
 
 const SuggestedProductsSection = ({
   suggestedProducts,
@@ -48,7 +45,8 @@ const SuggestedProductItem = ({
   suggestedProduct: SuggestedProduct;
 }) => {
   const { category, slug, images, name } = suggestedProduct.suggestedProduct;
-  const productName = removeProductType(name);
+  const productName = trimProductName(name);
+
   return (
     <div
       key={suggestedProduct.id}

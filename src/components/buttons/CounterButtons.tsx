@@ -5,15 +5,21 @@ interface CounterButtonsProps {
   count: number;
   increment: () => void;
   decrement: () => void;
+  className?: string;
 }
 
 const CounterButtons = ({
   count,
   increment,
   decrement,
+  className,
 }: CounterButtonsProps) => {
   return (
-    <div className="flex items-center justify-center bg-grayish p-4">
+    <div
+      className={`flex items-center justify-center bg-grayish p-4 ${
+        className ? className : ""
+      }`}
+    >
       <button
         onClick={decrement}
         aria-label="decrement"

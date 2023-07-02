@@ -2,6 +2,7 @@ import { forwardRef, useLayoutEffect } from "react";
 import { useSetPosition } from "~/hooks";
 import { useCartStore } from "~/store/cart";
 import { CartItem } from "~/components/cart";
+import { Button } from "~/components";
 
 const Popover = forwardRef<HTMLDivElement>((_, ref) => {
   const { setPosition } = useSetPosition(ref);
@@ -16,36 +17,47 @@ const Popover = forwardRef<HTMLDivElement>((_, ref) => {
     };
   }, [ref, setPosition]);
 
-  const count = 3;
-
   return (
     <div
       ref={ref}
-      className="absolute top-20 right-4 z-40 h-[490px] rounded-lg bg-white p-8 md:w-[375px]"
+      className="absolute top-20 right-4 z-40 flex h-[490px] flex-col justify-between rounded-lg bg-white p-8 md:w-[375px]"
     >
-      <div className="flex justify-between">
-        <h1 className="flex text-lg tracking-[1.29px]">
-          Cart <ItemCounter count={count} />
-        </h1>
-        <button className="text-[15px] font-medium leading-[25px] text-black/50 underline hover:text-primary-hover active:text-primary-hover active:underline">
-          Remove all
-        </button>
+      <div>
+        <div className="flex justify-between">
+          <h1 className="flex text-lg tracking-[1.29px]">
+            Cart <ItemCounter count={store.items.length} />
+          </h1>
+          <button
+            onClick={store.clearCart}
+            className="text-[15px] font-medium leading-[25px] text-black/50 underline hover:text-primary-hover active:text-primary-hover active:underline"
+          >
+            Remove all
+          </button>
+        </div>
+
+        <div className="mt-8">
+          {store.items.length > 0 ? (
+            store.items.map((item) => (
+              <CartItem
+                key={item.id}
+                item={item}
+                quantity={store.quantity}
+                total={store.cartTotal}
+                clearCart={store.clearCart}
+              />
+            ))
+          ) : (
+            <p>Your cart is empty</p>
+          )}
+        </div>
       </div>
 
       <div>
-        {store.items.length > 0 ? (
-          store.items.map((item) => (
-            <CartItem
-              key={item.id}
-              item={item}
-              quantity={store.quantity}
-              total={store.total}
-              clearCart={store.clearCart}
-            />
-          ))
-        ) : (
-          <p>Your cart is empty</p>
-        )}
+        <p className="flex justify-between uppercase text-black/50">
+          Total: <span className="ml-2 text-black/100">${store.cartTotal}</span>
+        </p>
+
+        <Button className="mt-8 w-full">Checkout</Button>
       </div>
     </div>
   );

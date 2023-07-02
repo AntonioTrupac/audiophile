@@ -5,6 +5,7 @@ interface Item {
   id: number;
   name: string;
   price: number;
+  imageUrl: string;
 }
 
 interface CartItem extends Item {
