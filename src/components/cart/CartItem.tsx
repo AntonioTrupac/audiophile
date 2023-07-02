@@ -6,11 +6,6 @@ import React from "react";
 
 interface CartItemProps {
   item: CartItem;
-  // item: CartItem & {
-  //   image: {
-  //     url: string;
-  //   };
-  // };
   quantity: number;
   total: number;
   clearCart: () => void;
