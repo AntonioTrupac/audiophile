@@ -1,7 +1,7 @@
 import { CartItem } from "~/store/cart";
 import { trimProductName } from "~/utils/helpers";
 import Image from "next/image";
-import { CounterButtons, Minus, Plus } from "~/components";
+import { Minus, Plus } from "~/components";
 import React from "react";
 
 interface CartItemProps {
@@ -16,7 +16,7 @@ interface CartItemProps {
   clearCart: () => void;
 }
 
-const CartItem = ({ item, total, quantity }: CartItemProps) => {
+const CartItem = ({ item }: CartItemProps) => {
   const itemName = trimProductName(item.name);
 
   return (
