@@ -1,5 +1,4 @@
 import { type NextPage } from "next";
-import { ProductCategoryHeader } from "~/components";
 
 const Checkout: NextPage = () => {
   return (

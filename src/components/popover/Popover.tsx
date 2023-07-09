@@ -2,7 +2,7 @@ import { forwardRef, useLayoutEffect } from "react";
 import { useSetPosition } from "~/hooks";
 import { useCartStore } from "~/store/cart";
 import { CartItem } from "~/components/cart";
-import { Button, LinkButton } from "~/components";
+import { LinkButton } from "~/components";
 
 const Popover = forwardRef<HTMLDivElement>((_, ref) => {
   const { setPosition } = useSetPosition(ref);
