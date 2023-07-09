@@ -24,6 +24,7 @@ const LinkButton = forwardRef<HTMLAnchorElement, LinkButtonProps>(
       variant = "primary",
       hasIcon = false,
       isExternal = false,
+      isDisabled = false,
       style: style = {},
       ...props
     },
@@ -43,6 +44,17 @@ const LinkButton = forwardRef<HTMLAnchorElement, LinkButtonProps>(
         )}
       </>
     );
+
+    if (isDisabled) {
+      return (
+        <div
+          className={`${combinedClassName} opacity-50 hover:bg-primary active:bg-primary`}
+          style={style}
+        >
+          {content}
+        </div>
+      );
+    }
 
     if (isExternal) {
       return (

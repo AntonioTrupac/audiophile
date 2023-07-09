@@ -2,7 +2,7 @@ import { forwardRef, useLayoutEffect } from "react";
 import { useSetPosition } from "~/hooks";
 import { useCartStore } from "~/store/cart";
 import { CartItem } from "~/components/cart";
-import { Button } from "~/components";
+import { Button, LinkButton } from "~/components";
 
 const Popover = forwardRef<HTMLDivElement>((_, ref) => {
   const { setPosition } = useSetPosition(ref);
@@ -29,7 +29,8 @@ const Popover = forwardRef<HTMLDivElement>((_, ref) => {
           </h1>
           <button
             onClick={store.clearCart}
-            className="text-[15px] font-medium leading-[25px] text-black/50 underline hover:text-primary-hover active:text-primary-hover active:underline"
+            disabled={store.items.length === 0}
+            className="text-[15px] font-medium leading-[25px] text-black/50 underline hover:text-primary-hover active:text-primary-hover active:underline disabled:text-black/50 disabled:hover:text-black/50 disabled:active:text-black/50"
           >
             Remove all
           </button>
@@ -57,7 +58,13 @@ const Popover = forwardRef<HTMLDivElement>((_, ref) => {
           Total: <span className="ml-2 text-black/100">${store.cartTotal}</span>
         </p>
 
-        <Button className="mt-8 w-full">Checkout</Button>
+        <LinkButton
+          href="/checkout"
+          isDisabled={store.items.length === 0}
+          className="mt-8 w-full"
+        >
+          Checkout
+        </LinkButton>
       </div>
     </div>
   );
