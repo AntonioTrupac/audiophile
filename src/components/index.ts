@@ -9,3 +9,4 @@ export { default as ProductContentWithName } from "./ProductContentWithName";
 export { default as ProductSplitContent } from "./ProductSplitContent";
 export { default as LoadingSpinner } from "./LoadingSpinner";
 export { default as ProductCategoryHeader } from "./ProductCategoryHeader";
+export { default as CheckoutPaymentDetails } from "./CheckoutPaymentDetails";
