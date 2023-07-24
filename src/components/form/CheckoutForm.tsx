@@ -1,8 +1,13 @@
 import { Input, Label } from "~/components";
+import { type UseFormRegister } from "react-hook-form";
 
-const CheckoutForm = () => {
+const CheckoutForm = ({
+  register,
+}: {
+  register: UseFormRegister<{ name: string }>;
+}) => {
   return (
-    <div className="mt-[38px] mb-[140px] w-full rounded-lg bg-white px-12 py-16">
+    <div className="mt-[38px] mb-[140px] w-[730px] rounded-lg bg-white px-12 py-16">
       <h1 className="mb-12 text-4xl">Checkout</h1>
 
       <h2 className="mb-4 text-[13px] leading-[25px] tracking-[0.929px] text-primary">
@@ -12,19 +17,19 @@ const CheckoutForm = () => {
       <div className="mb-6 flex w-full gap-4">
         <div className="w-1/2">
           <Label className="mb-2">Name</Label>
-          <Input />
+          <Input placeholder="Name" {...register("name")} />
         </div>
 
         <div className="w-1/2">
           <Label className="mb-2">Email address</Label>
-          <Input />
+          <Input placeholder="Email address" />
         </div>
       </div>
 
       <div className="flex w-full gap-4">
         <div className="w-1/2">
-          <Label className="mb-2">Name</Label>
-          <Input />
+          <Label className="mb-2">Phone Number</Label>
+          <Input placeholder="Phone number" />
         </div>
 
         <div className="w-1/2" />
@@ -36,25 +41,25 @@ const CheckoutForm = () => {
 
       <div className="mb-6 flex w-full flex-col">
         <Label className="mb-2">Address</Label>
-        <Input />
+        <Input placeholder="Address" />
       </div>
 
       <div className="mb-6 flex w-full gap-4">
         <div className="w-1/2">
           <Label className="mb-2">ZIP code</Label>
-          <Input />
+          <Input placeholder="ZIP code" />
         </div>
 
         <div className="w-1/2">
           <Label className="mb-2">City</Label>
-          <Input />
+          <Input placeholder="City" />
         </div>
       </div>
 
       <div className="mb-6 flex w-full gap-4">
         <div className="w-1/2">
           <Label className="mb-2">Country</Label>
-          <Input />
+          <Input placeholder="Country" />
         </div>
 
         <div className="w-1/2" />
