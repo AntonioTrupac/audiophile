@@ -11,6 +11,10 @@ const CheckoutPaymentDetails = ({
   items: CartItem[];
   total: number;
 }) => {
+  const shipping = 50;
+  const tax = 0.25 * total;
+  const grandTotal = total + shipping + tax;
+
   return (
     <div className="mt-10 mb-20 flex h-fit flex-col rounded-lg bg-white p-8 lg:w-[350px]">
       <h2 className="text-left text-lg font-bold">Summary</h2>
@@ -48,13 +52,28 @@ const CheckoutPaymentDetails = ({
       </div>
 
       <div>
-        <div className="">
-          <p>Total</p>
-          <p>${total}</p>
+        <div className="flex justify-between">
+          <p className="text-[15px] text-black/50">Total</p>
+          <p className="text-lg font-bold">${total}</p>
         </div>
 
-        <Button type="submit" className="mt-8">
-          Checkout
+        <div className="flex justify-between">
+          <p className="text-[15px] text-black/50">Shipping</p>
+          <p className="text-lg font-bold">${shipping}</p>
+        </div>
+
+        <div className="flex justify-between">
+          <p className="text-[15px] text-black/50">VAT</p>
+          <p className="text-lg font-bold">${tax}</p>
+        </div>
+
+        <div className="mt-4 flex justify-between">
+          <p className="text-[15px] text-black/50">Grand Total</p>
+          <p className="text-lg text-primary">${grandTotal}</p>
+        </div>
+
+        <Button type="submit" className="mt-8 w-full">
+          Continue & Pay
         </Button>
       </div>
     </div>
